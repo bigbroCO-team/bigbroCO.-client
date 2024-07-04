@@ -33,7 +33,7 @@ const PaymentInfo: React.FC<Props> = ({
           <S.ProductText>배송비</S.ProductText>
           <S.PriceText>+{numberLocalString(deliveryPrice)} 원</S.PriceText>
         </S.ProductContainer>
-        {Number(requiredPrice) !== 0 && (
+        {requiredPrice !== '0' && (
           <S.AddOrderText>
             {numberLocalString(requiredPrice)}원 추가주문 시, 무료배송
           </S.AddOrderText>
