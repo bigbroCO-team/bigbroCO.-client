@@ -22,7 +22,7 @@ export const Container = styled.header<{
 
     if (type === 'client_img')
       return css`
-        background-image: url('../../assets/png/headerImg.png');
+        background-image: url('https://github.com/bigbroCO-team/bigbroCO.-Front/assets/128475660/4355f01f-7bfd-4b1a-a711-dd49e24cf0c1');
       `;
 
     if (type === 'admin' || type === 'client_black')
