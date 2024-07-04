@@ -9,7 +9,6 @@ const meta: Meta<typeof PaymentInfo> = {
     deliveryPrice: '3000',
     requiredPrice: '9000',
     isFreeDelivery: true,
-    totalPrice: '54000',
   },
 };
 
@@ -18,3 +17,9 @@ export default meta;
 type Story = StoryObj<typeof PaymentInfo>;
 
 export const Primary: Story = {};
+
+export const FreeDelivery: Story = {
+  args: {
+    isFreeDelivery: false
+  }
+};
