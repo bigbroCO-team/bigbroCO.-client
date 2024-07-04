@@ -13,8 +13,6 @@ interface Props {
 const Header: React.FC<Props> = ({ type }) => {
   const segment = useSelectedLayoutSegment();
 
-  console.log(segment);
-
   return (
     <S.Container type={type} segment={segment}>
       <Link href='/'>
