@@ -6,7 +6,6 @@ interface Props {
   discountPrice: string;
   deliveryPrice: string;
   requiredPrice: string;
-  isFreeDelivery: boolean;
   totalPrice: string;
 }
 
@@ -15,7 +14,6 @@ const PaymentInfo: React.FC<Props> = ({
   discountPrice,
   deliveryPrice,
   requiredPrice,
-  isFreeDelivery,
   totalPrice,
 }) => {
   return (
@@ -35,7 +33,7 @@ const PaymentInfo: React.FC<Props> = ({
           <S.ProductText>배송비</S.ProductText>
           <S.PriceText>+{numberLocalString(deliveryPrice)} 원</S.PriceText>
         </S.ProductContainer>
-        {isFreeDelivery && (
+        {requiredPrice !== '0' && (
           <S.AddOrderText>
             {numberLocalString(requiredPrice)}원 추가주문 시, 무료배송
           </S.AddOrderText>
