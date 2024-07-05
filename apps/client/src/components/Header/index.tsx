@@ -5,9 +5,6 @@ import { useState } from 'react';
 const Header = () => {
   const router = useRouter();
   const segment = useSelectedLayoutSegment();
-  const navigator = (props: string) => {
-    router.push(props);
-  };
   const [scrollValue, setScrollValue] = useState(0);
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', () => {
@@ -19,7 +16,7 @@ const Header = () => {
   return (
     <>
       <S.Container type={scrollValue} path={segment}>
-        <S.Nav type={'logo'} path={segment} onClick={() => navigator('/')}>
+        <S.Nav type={'logo'} path={segment} onClick={() => router.push('/')}>
           BIGBRO COMPANY
         </S.Nav>
         <S.NavWrapper>
@@ -28,7 +25,7 @@ const Header = () => {
               key={idx}
               type={client}
               path={segment}
-              onClick={() => navigator(`/${client}`)}
+              onClick={() => router.push(`/${client}`)}
             >
               {client}
             </S.Nav>
@@ -37,7 +34,7 @@ const Header = () => {
         <S.Nav
           type={'Login'}
           path={segment}
-          onClick={() => navigator(`/login`)}
+          onClick={() => router.push(`/login`)}
         >
           Login
         </S.Nav>
