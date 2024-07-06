@@ -18,7 +18,7 @@ export const ProductInfoBox = styled.div`
 `;
 
 export const ProductName = styled.h3`
-  ${({ theme }) => theme.typo.titleSmall};
+  ${({ theme }) => theme.typo.title.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -42,17 +42,17 @@ export const ActualPriceBox = styled.div`
 `;
 
 export const ProductPercent = styled.h2`
-  ${({ theme }) => theme.typo.titleMedium};
+  ${({ theme }) => theme.typo.title.medium};
   color: ${({ theme }) => theme.color.error};
 `;
 
 export const ActualPriceText = styled.h2`
-  ${({ theme }) => theme.typo.titleMedium};
+  ${({ theme }) => theme.typo.title.medium};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const UsuallyPrice = styled.h2`
-  ${({ theme }) => theme.typo.titleMedium};
+  ${({ theme }) => theme.typo.title.medium};
   color: ${({ theme }) => theme.color.grey[300]};
   text-decoration: line-through;
 `;
@@ -75,6 +75,6 @@ export const SVGBox = styled.div`
 `;
 
 export const DescriptionText = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;

@@ -8,13 +8,13 @@ export const Container = styled.div`
 `;
 
 export const Name = styled.h1`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const Input = styled.input`
   &:disabled {
-    ${({ theme }) => theme.typo.bodySmall};
+    ${({ theme }) => theme.typo.body.small};
     color: ${({ theme }) => theme.color.grey[600]};
     background-color: ${({ theme }) => theme.color.grey[800]};
     height: 3rem;

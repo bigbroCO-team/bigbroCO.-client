@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Name = styled.h1`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -17,7 +17,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const Input = styled.input<{ isError: boolean }>`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   height: 3rem;
   width: 100%;
   padding: 0.5rem 1rem;
