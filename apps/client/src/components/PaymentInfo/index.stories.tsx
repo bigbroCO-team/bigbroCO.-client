@@ -20,6 +20,6 @@ export const Primary: Story = {};
 
 export const FreeDelivery: Story = {
   args: {
-    isFreeDelivery: false
-  }
+    isFreeDelivery: false,
+  },
 };

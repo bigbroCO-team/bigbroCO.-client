@@ -6,7 +6,7 @@
     "storybook": "pnpm --filter storybook",
     "tsconfig": "pnpm --filter tsconfig",
     "eslint-config-custom": "pnpm --filter eslint-config-custom",
-    "share-components": "pnpm --filter share-components"
+    "shared": "pnpm --filter shared"
   },
   "private": true,
   "license": "MIT",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@types/react": "^18",
     "emotion-reset": "^3.0.1",
     "eslint": "^8",
     "react": "^18",

@@ -1,11 +1,11 @@
 import { ThemeProvider } from '@emotion/react';
-import { GlobalStyle, theme } from 'share-components/styles';
+import { GlobalStyle, theme } from 'shared/styles';
 
 interface Props {
   readonly children: React.ReactNode;
 }
 
-const Provider: React.FC<Props> = ({ children }) => {
+const Wrapper: React.FC<Props> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -14,4 +14,4 @@ const Provider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default Provider;
+export default Wrapper;
