@@ -3,7 +3,7 @@ import * as S from './style';
 import { useState } from 'react';
 
 const Header = () => {
-  const router = useRouter();
+  const { push } = useRouter();
   const segment = useSelectedLayoutSegment();
   const [scrollValue, setScrollValue] = useState(0);
   if (typeof window !== 'undefined') {
@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       <S.Container type={scrollValue} path={segment}>
-        <S.Nav type={'logo'} path={segment} onClick={() => router.push('/')}>
+        <S.Nav type={'logo'} path={segment} onClick={() => push('/')}>
           BIGBRO COMPANY
         </S.Nav>
         <S.NavWrapper>
@@ -25,17 +25,13 @@ const Header = () => {
               key={idx}
               type={client}
               path={segment}
-              onClick={() => router.push(`/${client}`)}
+              onClick={() => push(`/${client}`)}
             >
               {client}
             </S.Nav>
           ))}
         </S.NavWrapper>
-        <S.Nav
-          type={'Login'}
-          path={segment}
-          onClick={() => router.push(`/login`)}
-        >
+        <S.Nav type={'Login'} path={segment} onClick={() => push(`/login`)}>
           Login
         </S.Nav>
       </S.Container>
