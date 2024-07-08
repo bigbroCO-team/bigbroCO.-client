@@ -20,8 +20,12 @@ const SelectShoppingCart: React.FC<Props> = ({ products: initialProducts }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [clickedCount, setClickedCount] = useState<number>(0);
   const [products, setProducts] = useState<Product[]>(initialProducts);
-  const [productClickedStates, setProductClickedStates] = useState<boolean[]>(initialProducts.map(() => false));
-  const [removingProductIndex, setRemovingProductIndex] = useState<number | null>(null);
+  const [productClickedStates, setProductClickedStates] = useState<boolean[]>(
+    initialProducts.map(() => false)
+  );
+  const [removingProductIndex, setRemovingProductIndex] = useState<
+    number | null
+  >(null);
 
   const handleAllClick = () => {
     const newIsAllClicked = !isClicked;
@@ -76,9 +80,8 @@ const SelectShoppingCart: React.FC<Props> = ({ products: initialProducts }) => {
       <S.MapGrayBar />
 
       {products.map((product, index) => (
-        <S.ProductBox isRemoving={index === removingProductIndex}>
+        <S.ProductBox key={index} isRemoving={index === removingProductIndex}>
           <CheckProduct
-            key={index}
             productImg={product.productImg}
             productName={product.productName}
             productColor={product.productColor}
