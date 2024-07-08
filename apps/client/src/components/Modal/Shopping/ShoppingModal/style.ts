@@ -41,6 +41,7 @@ export const CancelButton = styled.button`
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
+  ${({ theme }) => theme.typo.bodySmall};
   color: ${({ theme }) => theme.color.grey[600]};
   border-right: 0.0208rem solid
     var(--Separators-Non-opaque---Dark, rgba(84, 84, 88, 0.65));
@@ -52,5 +53,6 @@ export const DeleteButton = styled.button`
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
+  ${({ theme }) => theme.typo.bodySmall};
   color: ${({ theme }) => theme.color.main[50]};
 `;
