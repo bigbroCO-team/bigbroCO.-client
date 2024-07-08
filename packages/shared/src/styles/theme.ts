@@ -59,7 +59,7 @@ const color = {
   },
   background: '#1A1918',
   white: '#FFFFFF',
-  black: '#000000',
+  black: '#1A1918',
 } as const;
 
 const theme = {

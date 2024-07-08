@@ -7,7 +7,7 @@
     "paths": {
       "client/*": ["../client/src/*"],
       "admin/*": ["../admin/src/*"],
-      "share-components/*": ["../../packages/share-components/src/*"]
+      "shared/*": ["../../packages/shared/src/*"]
     }
   }
 }

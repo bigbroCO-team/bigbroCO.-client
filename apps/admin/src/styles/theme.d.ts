@@ -1,6 +1,6 @@
 import '@emotion/react';
 
-import { theme } from 'share-components';
+import { theme } from 'shared';
 
 type ExtendedTheme = typeof theme;
 

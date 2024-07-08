@@ -2,7 +2,7 @@
   "name": "storybook",
   "version": "1.0.0",
   "dependencies": {
-    "share-components": "workspace:^",
+    "shared": "workspace:^",
     "tsconfig": "workspace:^"
   },
   "devDependencies": {
