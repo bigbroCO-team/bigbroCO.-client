@@ -8,6 +8,7 @@ interface Props {
   discountPercent: string;
   price: string;
   productName: string;
+  isEdit: boolean;
 }
 
 const ProductItem: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const ProductItem: React.FC<Props> = ({
   discountPercent,
   price,
   productName,
+  isEdit,
 }) => {
   return (
     <S.Wrapper>
@@ -24,6 +26,7 @@ const ProductItem: React.FC<Props> = ({
         <S.PriceText>{numberLocalString(price)}</S.PriceText>
       </S.PriceInform>
       <S.ClothesText>{productName}</S.ClothesText>
+      {isEdit && <S.EditText>수정하기</S.EditText>}
     </S.Wrapper>
   );
 };
