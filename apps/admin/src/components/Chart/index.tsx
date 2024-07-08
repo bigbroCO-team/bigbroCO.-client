@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import * as S from './style';
 
-import { theme } from 'share-components';
+import { theme } from 'shared';
 
 interface Props {
   subScriberNumber: string[];
