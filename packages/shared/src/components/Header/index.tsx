@@ -2,7 +2,6 @@
 
 import * as S from './style';
 import * as I from 'shared/assets';
-import Link from 'next/link';
 import { HeaderType } from 'shared/types';
 import { useSelectedLayoutSegment } from 'next/navigation';
 
@@ -15,27 +14,27 @@ const Header: React.FC<Props> = ({ type }) => {
 
   return (
     <S.Container type={type} segment={segment}>
-      <Link href='/'>
+      <S.LogoWrapper href='/'>
         <I.BIGBROCOMPANYLogo />
-      </Link>
+      </S.LogoWrapper>
       <S.NavContainer>
         {type !== 'admin' && (
           <>
-            <Link href='/CBWAS'>
+            <S.LogoWrapper href='/CBWAS'>
               <I.CBWASLogo />
-            </Link>
-            <Link href='/S.C.B'>
+            </S.LogoWrapper>
+            <S.LogoWrapper href='/S.C.B'>
               <I.SCBLogo />
-            </Link>
-            <Link href='/BIGBRO'>
+            </S.LogoWrapper>
+            <S.LogoWrapper href='/BIGBRO'>
               <I.BIGBROLogo />
-            </Link>
-            <Link href='/GONGNEWGI'>
+            </S.LogoWrapper>
+            <S.LogoWrapper href='/GONGNEWGI'>
               <I.GONGNEWGILogo />
-            </Link>
-            <Link href='/SCULFEE'>
+            </S.LogoWrapper>
+            <S.LogoWrapper href='/SCULFEE'>
               <I.SCULFEELogo />
-            </Link>
+            </S.LogoWrapper>
           </>
         )}
         {type === 'admin' && (

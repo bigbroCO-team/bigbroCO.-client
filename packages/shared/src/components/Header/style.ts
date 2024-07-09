@@ -13,8 +13,14 @@ export const Container = styled.header<{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
 
   ${({ type, theme }) => {
+    if (type === 'client_clear')
+      return css`
+        background-color: transparent;
+      `;
+
     if (type === 'client_white')
       return css`
         background-color: ${theme.color.white};
@@ -48,20 +54,35 @@ export const Container = styled.header<{
             fill: ${theme.color.black};
           }
         `
-      : css`
-          .BIGBRO,
-          .CBWAS,
-          .GONGNEWGI,
-          .SCB,
-          .SCULFEE,
-          .Text {
-            fill: ${theme.color.grey[500]};
-          }
+      : type === 'client_clear'
+        ? css`
+            .BIGBRO,
+            .CBWAS,
+            .GONGNEWGI,
+            .SCB,
+            .SCULFEE,
+            .Text {
+              fill: ${theme.color.white};
+            }
 
-          .BIGBROCOMPANY {
-            fill: ${theme.color.white};
-          }
-        `}
+            .BIGBROCOMPANY {
+              fill: ${theme.color.white};
+            }
+          `
+        : css`
+            .BIGBRO,
+            .CBWAS,
+            .GONGNEWGI,
+            .SCB,
+            .SCULFEE,
+            .Text {
+              fill: ${theme.color.grey[500]};
+            }
+
+            .BIGBROCOMPANY {
+              fill: ${theme.color.white};
+            }
+          `}
 
   ${({ theme, segment }) => {
     if (segment === 'CBWAS')
@@ -99,6 +120,7 @@ export const Container = styled.header<{
 
 export const NavContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 3.75rem;
 `;
 
@@ -111,12 +133,19 @@ export const AdminNav = styled(Link)`
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
-export const LoginButton = styled(Link)`
-  margin-left: 1.1875rem;
+export const MyPageButton = styled(Link)`
+  display: flex;
 `;
 
-export const LogoutButton = styled(Link)`
+export const LoginButton = styled(MyPageButton)`
+  margin-left: 1.1875rem;
+  display: flex;
+`;
+
+export const LogoutButton = styled(MyPageButton)`
   margin-left: 0.3125rem;
 `;
 
-export const MyPageButton = styled(Link)``;
+export const LogoWrapper = styled(Link)`
+  display: flex;
+`;
