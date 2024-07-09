@@ -5,24 +5,22 @@ import * as S from './style';
 import { InputType } from 'client/types';
 import { CloseEyesIcon, OpenEyesIcon } from 'client/assets';
 
-interface Props {
-  name: string;
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  title: string;
   type: InputType;
-  errorMessage: string | null;
+  errorMessage: string | undefined;
   placeHolder: string;
-  isRequired?: boolean;
-  isDisabled?: boolean;
 }
 
 const FormInput = forwardRef<HTMLInputElement, Props>(
-  ({ name, type, placeHolder, errorMessage, isRequired, isDisabled }, ref) => {
+  ({ title, type, placeHolder, errorMessage, ...attributes }, ref) => {
     const [isHidden, setIsHidden] = useState<boolean>(true);
 
     const handleHiddenButtonClick = () => setIsHidden((prev) => !prev);
 
     return (
       <S.Container>
-        <S.Name>{name}</S.Name>
+        <S.Title>{title}</S.Title>
         <S.InputWrapper>
           <S.Input
             type={
@@ -33,16 +31,15 @@ const FormInput = forwardRef<HTMLInputElement, Props>(
             placeholder={placeHolder}
             isError={!!errorMessage}
             ref={ref}
-            required={isRequired}
-            disabled={isDisabled}
+            {...attributes}
           />
           {type === InputType.PASSWORD && (
-            <S.HiddenButton onClick={handleHiddenButtonClick}>
+            <S.HiddenButton type='button' onClick={handleHiddenButtonClick}>
               {isHidden ? <CloseEyesIcon /> : <OpenEyesIcon />}
             </S.HiddenButton>
           )}
         </S.InputWrapper>
-        {errorMessage && <S.Error>{errorMessage}</S.Error>}
+        <S.Error>{errorMessage}</S.Error>
       </S.Container>
     );
   }

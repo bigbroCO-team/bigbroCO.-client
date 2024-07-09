@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const Name = styled.h1`
+export const Title = styled.h1`
   ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
@@ -43,6 +43,7 @@ export const Error = styled.p`
   ${({ theme }) => theme.typo.label};
   color: ${({ theme }) => theme.color.error};
   padding-left: 0.25rem;
+  height: 1rem;
 `;
 
 export const HiddenButton = styled.button`
