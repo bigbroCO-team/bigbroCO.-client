@@ -59,7 +59,10 @@ export const ProductBox = styled.div<{ isRemoving: boolean }>`
   flex-direction: column;
   align-items: flex-start;
   gap: 2.5rem;
-  transition: opacity 0.3s ease-in, max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in,
+    max-height 0.3s ease-in-out,
+    margin 0.3s ease-in-out;
   opacity: ${({ isRemoving }) => (isRemoving ? 0 : 1)};
   overflow: hidden;
 `;
