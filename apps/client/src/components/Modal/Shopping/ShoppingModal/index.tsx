@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import ShoppingModalWrapper from '../ShoppingModalWrapper';
 
 import * as S from './style';
@@ -5,9 +6,22 @@ import * as S from './style';
 interface Props {
   selectedCount: number;
   closeModal: () => void;
+  deleteClick: () => void;
+  setDeleteClick: Dispatch<SetStateAction<boolean>>;
 }
 
-const ShoppingModal: React.FC<Props> = ({ selectedCount, closeModal }) => {
+const ShoppingModal: React.FC<Props> = ({
+  selectedCount,
+  closeModal,
+  deleteClick,
+  setDeleteClick,
+}) => {
+  const handleDeleteClick = () => {
+    deleteClick();
+    closeModal();
+    setDeleteClick(true);
+  };
+
   return (
     <ShoppingModalWrapper closeModal={closeModal}>
       <S.TextWrppaer>
@@ -21,8 +35,8 @@ const ShoppingModal: React.FC<Props> = ({ selectedCount, closeModal }) => {
         </S.DeleteTextBox>
       </S.TextWrppaer>
       <S.ButtonWrapper>
-        <S.CancelButton>취소</S.CancelButton>
-        <S.DeleteButton>삭제하기</S.DeleteButton>
+        <S.CancelButton onClick={closeModal}>취소</S.CancelButton>
+        <S.DeleteButton onClick={handleDeleteClick}>삭제하기</S.DeleteButton>
       </S.ButtonWrapper>
     </ShoppingModalWrapper>
   );
