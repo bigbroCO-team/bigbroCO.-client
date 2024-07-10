@@ -1,4 +1,4 @@
-const Svg1 = () => (
+const SVGBundle1 = () => (
   <svg
     width='38.25rem'
     height='36.5rem'
@@ -117,4 +117,4 @@ const Svg1 = () => (
   </svg>
 );
 
-export default Svg1;
+export default SVGBundle1;

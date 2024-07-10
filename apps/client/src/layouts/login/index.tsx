@@ -7,7 +7,7 @@ import { InputType, LoginFormType } from 'client/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { loginFormSchema } from 'client/schemas';
-import { Svg1 } from 'client/assets';
+import { SVGBundle1 } from 'client/assets';
 
 const LoginLayout = () => {
   const {
@@ -54,7 +54,7 @@ const LoginLayout = () => {
           </S.ShadowBox>
         </S.LeftBox>
         <S.RightBox>
-          <Svg1 />
+          <SVGBundle1 />
         </S.RightBox>
       </S.Container>
     </>
