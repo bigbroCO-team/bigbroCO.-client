@@ -26,5 +26,5 @@ export const ModalInner = styled.div`
     #1D1D1D
   `};
   background-blend-mode: overlay, normal;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(2.5rem);
 `;
