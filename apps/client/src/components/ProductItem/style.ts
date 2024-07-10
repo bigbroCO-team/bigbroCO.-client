@@ -34,3 +34,8 @@ export const ClothesText = styled.p`
   ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
+
+export const EditText = styled.button`
+  ${({ theme }) => theme.typo.bodySmall};
+  color: ${({ theme }) => theme.color.grey[500]};
+`;
