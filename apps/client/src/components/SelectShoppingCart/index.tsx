@@ -137,12 +137,7 @@ const SelectShoppingCart: React.FC<Props> = ({ products: initialProducts }) => {
             isRemoving={removingProductIndex.includes(index)}
           >
             <CheckProduct
-              productImg={product.productImg}
-              productName={product.productName}
-              productColor={product.productColor}
-              productPrice={product.productPrice}
-              productPercent={product.productPercent}
-              isSale={product.isSale}
+              {...product}
               allClick={productClickedStates[index]}
               onClick={(clicked) => handleProductClick(index, clicked)}
               onDelete={() => handleDeleteClick(index)}
