@@ -32,7 +32,7 @@ export const SelectButtonProvider = styled.button`
 `;
 
 export const SelectAllText = styled.p`
-  ${({ theme }) => theme.typo.bodyLarge};
+  ${({ theme }) => theme.typo.body.large};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -43,7 +43,7 @@ export const GrayBar = styled.div`
 `;
 
 export const DeleteButton = styled.button`
-  ${({ theme }) => theme.typo.bodyLarge};
+  ${({ theme }) => theme.typo.body.large};
   color: ${({ theme }) => theme.color.error};
 `;
 

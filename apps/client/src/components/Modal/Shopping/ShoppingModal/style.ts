@@ -18,12 +18,12 @@ export const DeleteTextBox = styled.div`
 `;
 
 export const QustionText = styled.p`
-  ${({ theme }) => theme.typo.bodyLarge};
+  ${({ theme }) => theme.typo.body.large};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const ExplainText = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.grey[600]};
 `;
 
@@ -41,7 +41,7 @@ export const CancelButton = styled.button`
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.grey[600]};
   border-right: 0.0208rem solid
     var(--Separators-Non-opaque---Dark, rgba(84, 84, 88, 0.65));
@@ -53,6 +53,6 @@ export const DeleteButton = styled.button`
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.main[50]};
 `;

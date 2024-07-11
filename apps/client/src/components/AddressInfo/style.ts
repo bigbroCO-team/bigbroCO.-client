@@ -16,11 +16,11 @@ export const Container = styled.div<{ state: boolean }>`
 `;
 
 export const TitleSmall = styled.div`
-  ${({ theme }) => theme.typo.titleSmall};
+  ${({ theme }) => theme.typo.title.small};
 `;
 
 export const BodySmall = styled.div`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
 `;
 
 export const ButtonContainer = styled.div`
@@ -37,7 +37,7 @@ export const InfoButton = styled.button`
   display: flex;
   height: 3rem;
   color: ${({ theme }) => theme.color.grey[300]};
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   padding: 0.75rem 2rem;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@ export const IsSelectButton = styled.button<{ isSelected: boolean }>`
     isSelected ? theme.color.black : theme.color.grey[600]};
   background-color: ${({ isSelected, theme }) =>
     isSelected ? theme.color.main[50] : theme.color.grey[300]};
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   padding: 0.75rem 2rem;
   justify-content: center;
   align-items: center;

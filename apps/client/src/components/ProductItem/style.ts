@@ -36,6 +36,6 @@ export const ClothesText = styled.p`
 `;
 
 export const EditText = styled.button`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.grey[500]};
 `;
