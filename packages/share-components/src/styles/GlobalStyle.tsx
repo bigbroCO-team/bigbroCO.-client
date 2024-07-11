@@ -30,7 +30,6 @@ const GlobalStyle = () => (
         background: '#ffffff';
         height: 100vh;
         height: 100dvh;
-        margin-top: 5rem;
         overscroll-behavior-y: none;
       }
 
