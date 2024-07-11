@@ -34,6 +34,7 @@ const SelectShoppingCart: React.FC<Props> = ({ products: initialProducts }) => {
     if (deleteClick) {
       handleDeleteSelectedProducts();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deleteClick]);
 
   const handleAllClick = () => {

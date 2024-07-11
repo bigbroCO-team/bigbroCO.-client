@@ -18,7 +18,10 @@ const LoginLayout = () => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const handleFormSubmit: SubmitHandler<LoginFormType> = (data) => {};
+  const handleFormSubmit: SubmitHandler<LoginFormType> = (data) => {
+    // eslint-disable-next-line no-console
+    console.log(data);
+  };
 
   return (
     <>
