@@ -21,17 +21,17 @@ export const PriceInform = styled.div`
 `;
 
 export const DiscountText = styled.p`
-  ${({ theme }) => theme.typo.titleSmall};
+  ${({ theme }) => theme.typo.title.small};
   color: ${({ theme }) => theme.color.error};
 `;
 
 export const PriceText = styled.p`
-  ${({ theme }) => theme.typo.titleSmall};
+  ${({ theme }) => theme.typo.title.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const ClothesText = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 

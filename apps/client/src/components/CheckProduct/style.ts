@@ -42,12 +42,12 @@ export const ProductTextBox = styled.div`
 `;
 
 export const ProductName = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const ProductColor = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
@@ -80,7 +80,7 @@ export const CountText = styled.p`
   width: 0.5rem;
   justify-content: center;
   align-items: center;
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -106,12 +106,12 @@ export const PriceTextBox = styled.div`
 `;
 
 export const PriceText = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const BeforeText = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.grey[500]};
   text-decoration: line-through;
 `;

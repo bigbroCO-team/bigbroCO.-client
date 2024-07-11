@@ -1,48 +1,52 @@
 const typo = {
-  titleLarge: {
-    fontSize: '3rem',
-    fontWeight: 600,
-    lineHeight: '3.625rem',
-  },
-  titleMedium: {
-    fontSize: '2.25rem',
-    fontWeight: 600,
-    lineHeight: '2.6875rem',
-  },
-  titleSmall: {
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    lineHeight: '1.9375rem',
+  title: {
+    large: {
+      fontSize: '3rem',
+      fontWeight: 600,
+      lineHeight: '3.625rem',
+    },
+    medium: {
+      fontSize: '2.25rem',
+      fontWeight: 600,
+      lineHeight: '2.6875rem',
+    },
+    small: {
+      fontSize: '1.5rem',
+      fontWeight: 600,
+      lineHeight: '1.9375rem',
+    },
   },
   subtitle: {
-    fontSize: '1rem',
+    fontSize: '1.125rem',
     fontWeight: 600,
-    lineHeight: '1.375rem',
+    lineHeight: '1.6875rem',
   },
-  bodyLarge: {
-    fontSize: '1rem',
-    fontWeight: 400,
-    lineHeight: '1.375rem',
-  },
-  bodyMedium: {
-    fontSize: '0.875rem',
-    fontWeight: 600,
-    lineHeight: '1.25rem',
-  },
-  bodySmall: {
-    fontSize: '0.875rem',
-    fontWeight: 400,
-    lineHeight: '1.25rem',
+  body: {
+    large: {
+      fontSize: '1.125rem',
+      fontWeight: 400,
+      lineHeight: '1.6875rem',
+    },
+    medium: {
+      fontSize: '1rem',
+      fontWeight: 600,
+      lineHeight: '1.375rem',
+    },
+    small: {
+      fontSize: '1rem',
+      fontWeight: 400,
+      lineHeight: '1.375rem',
+    },
   },
   label: {
     fontSize: '0.75rem',
     fontWeight: 400,
-    lineHeight: '1.125rem',
+    lineHeight: '1rem',
   },
 };
 
 const color = {
-  main: { 50: '#FF952B', 100: '#2C46FF' },
+  main: { 50: '#FF952B', 100: '#2C46FF', 150: '#288BE1' },
   error: '#DF454A',
   grey: {
     25: '#252525',

@@ -19,12 +19,12 @@ export const ProductContainer = styled.div`
 `;
 
 export const ProductText = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const PriceText = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -37,7 +37,7 @@ export const DeliveryContainer = styled.div`
 `;
 
 export const AddOrderText = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.error};
 `;
 
@@ -48,6 +48,6 @@ export const BorderBar = styled.div`
 `;
 
 export const TotalPriceText = styled.p`
-  ${({ theme }) => theme.typo.titleSmall};
+  ${({ theme }) => theme.typo.title.small};
   color: ${({ theme }) => theme.color.white};
 `;

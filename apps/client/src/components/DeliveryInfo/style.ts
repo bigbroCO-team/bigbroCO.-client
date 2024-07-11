@@ -26,7 +26,7 @@ export const DeliveryText = styled.p<{
   isPreparing: boolean;
   isArrive: boolean;
 }>`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme, isPreparing, isArrive }) =>
     isPreparing
       ? isArrive
@@ -36,7 +36,7 @@ export const DeliveryText = styled.p<{
 `;
 
 export const ShippingText = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -67,12 +67,12 @@ export const ProductNameBox = styled.div`
 `;
 
 export const ProductName = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const ProductColor = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
@@ -83,7 +83,7 @@ export const ProductSecondaryInfo = styled.div`
 `;
 
 export const ProductNumber = styled.p`
-  ${({ theme }) => theme.typo.bodySmall};
+  ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
 `;
 
@@ -95,12 +95,12 @@ export const ProductPriceBox = styled.div`
 `;
 
 export const ProductPrice = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.white};
 `;
 
 export const BeforeDiscountPrice = styled.p`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.grey[500]};
   text-decoration: line-through;
 `;
@@ -113,7 +113,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  ${({ theme }) => theme.typo.bodyMedium};
+  ${({ theme }) => theme.typo.body.medium};
   color: ${({ theme }) => theme.color.grey[600]};
   display: flex;
   width: 8.75rem;

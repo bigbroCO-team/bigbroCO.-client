@@ -8,7 +8,6 @@ const meta: Meta<typeof FormInput> = {
     name: 'name',
     placeHolder: '이름을 입력해주세요',
     type: InputType.TEXT,
-    isRequired: false,
   },
 };
 
