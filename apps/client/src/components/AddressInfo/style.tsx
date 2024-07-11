@@ -58,5 +58,7 @@ export const IsSelectButton = styled.button<{ selected: boolean }>`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  pointer-events: ${({ selected }) => (selected ? 'none' : null)};
+  pointer-events: ${({ selected }) => {
+    if (selected) return 'none';
+  }};
 `;
