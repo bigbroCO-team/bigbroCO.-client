@@ -9,6 +9,7 @@ const meta: Meta<typeof ProductItem> = {
     discountPercent: '20',
     price: '25000',
     productName: 'Big Bro T-shirt',
+    isEdit: false,
   },
 };
 
@@ -17,3 +18,9 @@ export default meta;
 type Story = StoryObj<typeof ProductItem>;
 
 export const Primary: Story = {};
+
+export const Edit: Story = {
+  args: {
+    isEdit: true,
+  },
+};

@@ -1,6 +1,4 @@
-'use client';
-
-import { Provider } from 'share-components';
+import Provider from './provider';
 
 const RootLayout = ({
   children,

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "jsxImportSource": "@emotion/react",
     "paths": {
-      "share-components/*": ["./src/*"]
+      "shared/*": ["./src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

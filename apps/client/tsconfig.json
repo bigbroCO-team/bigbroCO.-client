@@ -5,7 +5,7 @@
   "compilerOptions": {
     "paths": {
       "client/*": ["./src/*"],
-      "share-components/*": ["../../packages/share-components/src/*"]
+      "shared/*": ["../../packages/shared/src/*"]
     }
   }
 }

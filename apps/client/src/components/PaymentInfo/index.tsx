@@ -7,7 +7,6 @@ interface Props {
   deliveryPrice: string;
   requiredPrice: string;
   isFreeDelivery: boolean;
-  totalPrice: string;
 }
 
 const PaymentInfo: React.FC<Props> = ({
@@ -16,8 +15,17 @@ const PaymentInfo: React.FC<Props> = ({
   deliveryPrice,
   requiredPrice,
   isFreeDelivery,
-  totalPrice,
 }) => {
+  const deliveryCost = isFreeDelivery ? deliveryPrice : '0';
+
+  const totalPrice = numberLocalString(
+    (
+      Number(productPrice) -
+      Number(discountPrice) +
+      Number(deliveryCost)
+    ).toString()
+  );
+
   return (
     <S.Wrapper>
       <S.ProductContainer>
@@ -33,9 +41,9 @@ const PaymentInfo: React.FC<Props> = ({
       <S.DeliveryContainer>
         <S.ProductContainer>
           <S.ProductText>배송비</S.ProductText>
-          <S.PriceText>+{numberLocalString(deliveryPrice)} 원</S.PriceText>
+          <S.PriceText>+{numberLocalString(deliveryCost)} 원</S.PriceText>
         </S.ProductContainer>
-        {isFreeDelivery && (
+        {requiredPrice !== '0' && (
           <S.AddOrderText>
             {numberLocalString(requiredPrice)}원 추가주문 시, 무료배송
           </S.AddOrderText>
@@ -46,7 +54,7 @@ const PaymentInfo: React.FC<Props> = ({
 
       <S.ProductContainer>
         <S.ProductText>결제예정금액</S.ProductText>
-        <S.TotalPriceText>{numberLocalString(totalPrice)} 원</S.TotalPriceText>
+        <S.TotalPriceText>{totalPrice} 원</S.TotalPriceText>
       </S.ProductContainer>
     </S.Wrapper>
   );

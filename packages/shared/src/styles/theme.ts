@@ -45,6 +45,7 @@ const color = {
   main: { 50: '#FF952B', 100: '#2C46FF' },
   error: '#DF454A',
   grey: {
+    25: '#252525',
     50: '#F2F2F2',
     100: '#E8E8E8',
     200: '#D1D1D1',
@@ -58,7 +59,7 @@ const color = {
   },
   background: '#1A1918',
   white: '#FFFFFF',
-  black: '#000000',
+  black: '#1A1918',
 } as const;
 
 const theme = {
