@@ -46,19 +46,19 @@ export const InfoButton = styled.button`
   border: 0.0625rem solid ${({ theme }) => theme.color.grey[300]};
 `;
 
-export const IsSelectButton = styled.button<{ selected: boolean }>`
+export const IsSelectButton = styled.button<{ isSelected: boolean }>`
   display: flex;
   height: 3rem;
-  color: ${({ selected, theme }) =>
-    selected ? theme.color.black : theme.color.grey[600]};
-  background-color: ${({ selected, theme }) =>
-    selected ? theme.color.main[50] : theme.color.grey[300]};
+  color: ${({ isSelected, theme }) =>
+    isSelected ? theme.color.black : theme.color.grey[600]};
+  background-color: ${({ isSelected, theme }) =>
+    isSelected ? theme.color.main[50] : theme.color.grey[300]};
   ${({ theme }) => theme.typo.bodyMedium};
   padding: 0.75rem 2rem;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  pointer-events: ${({ selected }) => {
-    if (selected) return 'none';
+  pointer-events: ${({ isSelected }) => {
+    if (isSelected) return 'none';
   }};
 `;
