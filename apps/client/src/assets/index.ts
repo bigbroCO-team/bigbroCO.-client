@@ -4,4 +4,4 @@ export { default as CheckBox } from './CheckBox';
 export { default as MinusIcon } from './MinusIcon';
 export { default as PlusIcon } from './PlusIcon';
 export { default as XIcon } from './XIcon';
-export { default as Svg1 } from './Svg1';
+export { default as SVGBundle1 } from './SVGBundle1';
