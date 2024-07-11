@@ -24,6 +24,12 @@ export const ClientWhite: Story = {
   },
 };
 
+export const ClientClear: Story = {
+  args: {
+    type: 'client_clear',
+  },
+};
+
 export const ClientImg: Story = {
   args: {
     type: 'client_img',

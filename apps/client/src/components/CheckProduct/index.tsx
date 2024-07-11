@@ -1,6 +1,8 @@
+'use client';
+
 import { CheckBox, MinusIcon, PlusIcon, XIcon } from 'client/assets';
 import * as S from './style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   productImg: string;
@@ -9,6 +11,9 @@ interface Props {
   productPrice: number;
   productPercent: number;
   isSale: boolean;
+  allClick: boolean;
+  onClick: (clicked: boolean) => void;
+  onDelete: () => void;
 }
 
 const CheckProduct: React.FC<Props> = ({
@@ -18,9 +23,24 @@ const CheckProduct: React.FC<Props> = ({
   productPrice,
   productPercent,
   isSale,
+  allClick,
+  onClick,
+  onDelete,
 }) => {
   const [priceCount, setPriceCount] = useState<number>(1);
   const [isClicked, setIsClicked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsClicked(allClick);
+  }, [allClick]);
+
+  productPrice = productPrice * priceCount;
+
+  const handleCheckboxClick = () => {
+    const newIsClicked = !isClicked;
+    setIsClicked(newIsClicked);
+    onClick(newIsClicked);
+  };
 
   const cntCalculator = (isPlus: boolean) => {
     setPriceCount((prev) => {
@@ -36,11 +56,7 @@ const CheckProduct: React.FC<Props> = ({
   return (
     <S.Wrapper>
       <S.ProductInfoBox>
-        <S.CheckBoxContainer
-          onClick={() => {
-            setIsClicked(!isClicked);
-          }}
-        >
+        <S.CheckBoxContainer onClick={handleCheckboxClick}>
           <CheckBox isClicked={isClicked} />
         </S.CheckBoxContainer>
         <S.ProductMainInfo>
@@ -77,7 +93,7 @@ const CheckProduct: React.FC<Props> = ({
               <S.PriceText>{productPrice.toLocaleString()}원</S.PriceText>
             )}
           </S.PriceTextBox>
-          <S.XButton>
+          <S.XButton onClick={onDelete}>
             <XIcon />
           </S.XButton>
         </S.DetailPriceInfo>
