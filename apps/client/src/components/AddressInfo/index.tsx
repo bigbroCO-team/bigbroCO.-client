@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import * as S from './style';
 
@@ -19,6 +21,7 @@ const AddressInfo: React.FC<Props> = ({
   IsSelected,
 }) => {
   const [selected, setSelected] = useState(IsSelected);
+  const information = [PhoneNumber, Address, Detail];
 
   const infoModify = () => {
     alert(`modify ${Id}`);
@@ -31,9 +34,9 @@ const AddressInfo: React.FC<Props> = ({
   return (
     <S.Container state={selected}>
       <S.TitleSmall>{AddressName}</S.TitleSmall>
-      <S.BodySmall>{PhoneNumber}</S.BodySmall>
-      <S.BodySmall>{Address}</S.BodySmall>
-      <S.BodySmall>{Detail}</S.BodySmall>
+      {information.map((el, idx) => (
+        <S.BodySmall key={idx}>{el}</S.BodySmall>
+      ))}
       <S.ButtonContainer>
         <S.InfoButtonContainer>
           <S.InfoButton onClick={() => infoModify()}>수정</S.InfoButton>
