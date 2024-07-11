@@ -1,7 +1,6 @@
 'use client';
 
 import { Provider } from 'share-components';
-import { Header } from 'client/components';
 
 const RootLayout = ({
   children,
@@ -18,10 +17,7 @@ const RootLayout = ({
       />
     </head>
     <body>
-      <Provider>
-        <Header />
-        {children}
-      </Provider>
+      <Provider>{children}</Provider>
     </body>
   </html>
 );
