@@ -39,8 +39,8 @@ const AddressInfo: React.FC<Props> = ({
       ))}
       <S.ButtonContainer>
         <S.InfoButtonContainer>
-          <S.InfoButton onClick={() => infoModify()}>수정</S.InfoButton>
-          <S.InfoButton onClick={() => infoDelete()}>삭제</S.InfoButton>
+          <S.InfoButton onClick={infoModify}>수정</S.InfoButton>
+          <S.InfoButton onClick={infoDelete}>삭제</S.InfoButton>
         </S.InfoButtonContainer>
         <S.IsSelectButton
           isSelected={selected}
