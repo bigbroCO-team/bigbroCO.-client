@@ -23,7 +23,7 @@ export const ModalInner = styled.div`
   border-radius: 0.875rem;
   background: ${({ theme }) => `
     linear-gradient(0deg, ${theme.color.grey[500]} 0%, ${theme.color.grey[500]} 100%), 
-    #1D1D1D
+    ${theme.color.grey[25]}
   `};
   background-blend-mode: overlay, normal;
   backdrop-filter: blur(2.5rem);
