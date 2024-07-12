@@ -1,13 +1,13 @@
 'use client';
 
-import { Wrapper } from 'shared';
+import { Provider as P } from 'shared';
 
 interface Props {
   readonly children: React.ReactNode;
 }
 
 const Provider: React.FC<Props> = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+  return <P>{children}</P>;
 };
 
 export default Provider;
