@@ -1,13 +1,13 @@
 'use client';
 
-import { Provider as P } from 'shared';
+import { Provider as SharedProvder } from 'shared';
 
 interface Props {
   readonly children: React.ReactNode;
 }
 
 const Provider: React.FC<Props> = ({ children }) => {
-  return <P>{children}</P>;
+  return <SharedProvder>{children}</SharedProvder>;
 };
 
 export default Provider;
