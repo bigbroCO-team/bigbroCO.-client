@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import React from 'react';
-import { Wrapper } from 'shared';
+import { Provider } from 'shared';
 
 const preview: Preview = {
   parameters: {
@@ -30,9 +30,9 @@ const preview: Preview = {
 
   decorators: [
     (Story) => (
-      <Wrapper>
+      <Provider>
         <Story />
-      </Wrapper>
+      </Provider>
     ),
   ],
 };
