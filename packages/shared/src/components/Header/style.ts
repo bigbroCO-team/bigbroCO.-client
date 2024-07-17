@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { HeaderType } from 'shared/types';
+import type { HeaderPositionType, HeaderType } from 'shared/types';
 
 export const Container = styled.header<{
   type: HeaderType;
+  position: HeaderPositionType;
   segment: string | null;
 }>`
   width: 100vw;
@@ -13,7 +14,8 @@ export const Container = styled.header<{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: ${({ position }) => position};
+  z-index: 10;
 
   ${({ type, theme }) => {
     if (type === 'client_clear')

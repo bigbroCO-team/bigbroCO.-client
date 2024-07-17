@@ -2,18 +2,19 @@
 
 import * as S from './style';
 import * as I from 'shared/assets';
-import { HeaderType } from 'shared/types';
+import type { HeaderType, HeaderPositionType } from 'shared/types';
 import { useSelectedLayoutSegment } from 'next/navigation';
 
 interface Props {
   type: HeaderType;
+  position?: HeaderPositionType;
 }
 
-const Header: React.FC<Props> = ({ type }) => {
+const Header: React.FC<Props> = ({ type, position = 'fixed' }) => {
   const segment = useSelectedLayoutSegment();
 
   return (
-    <S.Container type={type} segment={segment}>
+    <S.Container type={type} position={position} segment={segment}>
       <S.LogoWrapper href='/'>
         <I.BIGBROCOMPANYLogo />
       </S.LogoWrapper>
