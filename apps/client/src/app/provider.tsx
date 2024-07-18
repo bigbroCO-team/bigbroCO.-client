@@ -1,6 +1,6 @@
 'use client';
 
-import { Provider as SharedProvder } from 'shared';
+import { Provider as SharedProvder } from 'shared/components';
 
 interface Props {
   readonly children: React.ReactNode;
