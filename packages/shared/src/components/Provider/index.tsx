@@ -1,3 +1,5 @@
+'use client';
+
 import { ThemeProvider } from '@emotion/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
