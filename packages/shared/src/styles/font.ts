@@ -6,7 +6,7 @@ const PretendardFont = localFont({
 });
 
 const ImFellGreatPrimerFont = localFont({
-  src: './fonts/ImFellGreatPrimer.ttf',
+  src: './fonts/IMFellGreatPrimer.ttf',
   variable: '--Im-Fell-Great-Primer',
 });
 
