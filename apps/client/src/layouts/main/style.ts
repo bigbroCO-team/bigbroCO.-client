@@ -99,9 +99,6 @@ export const DescribeBox = styled.div`
   min-width: 49.25rem;
   height: 14rem;
   ${({ theme }) => theme.typo.body.small};
-  //
-  line-height: 2rem;
-  font-weight: 300;
   font-family: ${font.Pretendard};
 `;
 
@@ -191,10 +188,8 @@ export const BrandShadowBox = styled.div`
 `;
 
 export const BrandText = styled.p`
-  ${({ theme }) => theme.typo.title.medium};
+  ${({ theme }) => theme.typo.imfeel.large};
   color: ${({ theme }) => theme.color.white};
-  //
-  font-weight: 400;
   font-family: ${font.ImFellGreatPrimer};
 `;
 
