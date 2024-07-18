@@ -16,6 +16,7 @@ export const Container = styled.header<{
   justify-content: space-between;
   position: ${({ position }) => position};
   z-index: 10;
+  transition: all 0.3s;
 
   ${({ type, theme }) => {
     if (type === 'client_clear')

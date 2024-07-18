@@ -176,6 +176,8 @@ export const BrandShadowBox = styled.div`
   justify-content: center;
   z-index: 2;
   position: relative;
+  transition: all 0.3s;
+
   & > * {
     visibility: hidden;
   }
