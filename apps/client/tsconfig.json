@@ -4,6 +4,7 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "paths": {
+      "client/public": ["./public"],
       "client/*": ["./src/*"],
       "shared/*": ["../../packages/shared/src/*"]
     }
