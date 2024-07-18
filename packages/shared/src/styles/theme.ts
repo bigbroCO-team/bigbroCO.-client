@@ -1,4 +1,16 @@
 const typo = {
+  extra: {
+    large: {
+      fontSize: '12.5rem',
+      fontWeight: 800,
+      lineHeight: '14.9375rem',
+    },
+    medium: {
+      fontSize: '10rem',
+      fontWeight: 800,
+      lineHeight: '11.9375rem',
+    },
+  },
   title: {
     large: {
       fontSize: '3rem',
@@ -43,7 +55,41 @@ const typo = {
     fontWeight: 400,
     lineHeight: '1rem',
   },
-};
+  stoopid: {
+    extraLarge: {
+      fontSize: '25rem',
+      fontWeight: 500,
+      lineHeight: '14rem',
+    },
+    large: {
+      fontSize: '16.8rem',
+      fontWeight: 500,
+      lineHeight: '8.2rem',
+    },
+    medium: {
+      fontSize: '12.5rem',
+      fontWeight: 400,
+      lineHeight: '10rem',
+    },
+    small: {
+      fontSize: '2rem',
+      fontWeight: 400,
+      lineHeight: '4rem',
+    },
+  },
+  imfeel: {
+    large: {
+      fontSize: '2.25rem',
+      fontWeight: 400,
+      lineHeight: '2.75rem',
+    },
+    medium: {
+      fontSize: '1.5rem',
+      fontWeight: 400,
+      lineHeight: '1.8125rem',
+    },
+  },
+} as const;
 
 const color = {
   main: { 50: '#FF952B', 100: '#2C46FF', 150: '#288BE1' },
