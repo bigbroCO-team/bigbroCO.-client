@@ -79,6 +79,11 @@ export const MyPageButton = styled(Link)`
   justify-content: end;
   width: 5rem;
   color: inherit;
+  user-select: none;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.main[50]} !important;
+  }
 `;
 
 export const LoginButton = styled(MyPageButton)``;
@@ -89,6 +94,7 @@ export const LogoWrapper = styled(Link)`
   ${({ theme }) => theme.typo.imfeel.medium};
   color: inherit;
   display: flex;
+  user-select: none;
 
   &:hover {
     color: ${({ theme }) => theme.color.main[50]} !important;
@@ -96,7 +102,8 @@ export const LogoWrapper = styled(Link)`
 `;
 
 export const BIGBROCOMPANY = styled(Link)`
-  color: ${({ theme }) => theme.color.white};
-  display: flex;
   ${({ theme }) => theme.typo.imfeel.medium};
+  color: ${({ theme }) => theme.color.white};
+  user-select: none;
+  display: flex;
 `;
