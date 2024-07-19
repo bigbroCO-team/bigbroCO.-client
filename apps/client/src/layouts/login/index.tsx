@@ -1,6 +1,6 @@
 'use client';
 
-import { BIGBROCOMPANYLogo, Header } from 'shared';
+import { Header } from 'shared';
 import * as S from './style';
 import { FormInput } from 'client/components';
 import { InputType, LoginFormType } from 'client/types';
@@ -32,7 +32,7 @@ const LoginLayout = () => {
       <S.Container>
         <S.LeftBox>
           <S.ShadowBox>
-            <BIGBROCOMPANYLogo />
+            BIGBRO COMPANY
             <S.LoginForm onSubmit={handleSubmit(handleFormSubmit)}>
               <FormInput
                 {...register('id')}
