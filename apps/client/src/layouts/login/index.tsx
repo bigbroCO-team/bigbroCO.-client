@@ -1,13 +1,16 @@
 'use client';
 
-import { BIGBROCOMPANYLogo, Header } from 'shared';
+import { Header } from 'shared';
 import * as S from './style';
 import { FormInput } from 'client/components';
 import { InputType, LoginFormType } from 'client/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { loginFormSchema } from 'client/schemas';
-import { SVGBundle1 } from 'client/assets';
+import { backgroundImg } from 'client/public';
+import * as IMG from 'client/public';
+import Image from 'next/image';
+import { LoginSVG1, LoginSVG2 } from 'client/assets';
 
 const LoginLayout = () => {
   const {
@@ -29,7 +32,7 @@ const LoginLayout = () => {
       <S.Container>
         <S.LeftBox>
           <S.ShadowBox>
-            <BIGBROCOMPANYLogo />
+            BIGBRO COMPANY
             <S.LoginForm onSubmit={handleSubmit(handleFormSubmit)}>
               <FormInput
                 {...register('id')}
@@ -57,8 +60,21 @@ const LoginLayout = () => {
           </S.ShadowBox>
         </S.LeftBox>
         <S.RightBox>
-          <SVGBundle1 />
+          <S.SVGBundleContainer>
+            <S.SVGBundleLeftBox>
+              <Image src={IMG.Login1Img} alt='로그인 이미지 1' />
+            </S.SVGBundleLeftBox>
+            <S.SVGBundleRightBox>
+              <LoginSVG1 />
+              <S.SVGBundleMiddleImg src={IMG.Login2Img} alt='로그인 이미지 2' />
+              <S.SVGBundleBottomBox>
+                <LoginSVG2 />
+              </S.SVGBundleBottomBox>
+            </S.SVGBundleRightBox>
+            <S.AbsoluteImg src={IMG.Login3Img} alt='로그인 이미지 3' />
+          </S.SVGBundleContainer>
         </S.RightBox>
+        <S.BackgroundImg src={backgroundImg} alt='배경화면' />
       </S.Container>
     </>
   );

@@ -1,5 +1,7 @@
+import { MainLayout } from 'client/layouts';
+
 const Page = () => {
-  return <div></div>;
+  return <MainLayout />;
 };
 
 export default Page;

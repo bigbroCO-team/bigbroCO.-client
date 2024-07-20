@@ -1,10 +1,12 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { HeaderType } from 'shared/types';
+import { font } from 'shared/styles';
+import type { HeaderPositionType, HeaderType } from 'shared/types';
 
 export const Container = styled.header<{
   type: HeaderType;
+  position: HeaderPositionType;
   segment: string | null;
 }>`
   width: 100vw;
@@ -13,7 +15,10 @@ export const Container = styled.header<{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: ${({ position }) => position};
+  z-index: 10;
+  transition: all 0.3s;
+  font-family: ${font.ImFellGreatPrimer};
 
   ${({ type, theme }) => {
     if (type === 'client_clear')
@@ -41,87 +46,22 @@ export const Container = styled.header<{
   ${({ theme, type }) =>
     type === 'client_white'
       ? css`
-          .BIGBRO,
-          .CBWAS,
-          .GONGNEWGI,
-          .SCB,
-          .SCULFEE,
-          .Text {
-            fill: ${theme.color.grey[600]};
-          }
-
-          .BIGBROCOMPANY {
-            fill: ${theme.color.black};
-          }
+          color: ${theme.color.grey[600]};
         `
       : type === 'client_clear'
         ? css`
-            .BIGBRO,
-            .CBWAS,
-            .GONGNEWGI,
-            .SCB,
-            .SCULFEE,
-            .Text {
-              fill: ${theme.color.white};
-            }
-
-            .BIGBROCOMPANY {
-              fill: ${theme.color.white};
-            }
+            color: ${theme.color.white};
           `
         : css`
-            .BIGBRO,
-            .CBWAS,
-            .GONGNEWGI,
-            .SCB,
-            .SCULFEE,
-            .Text {
-              fill: ${theme.color.grey[500]};
-            }
-
-            .BIGBROCOMPANY {
-              fill: ${theme.color.white};
-            }
+            color: ${theme.color.grey[500]};
           `}
-
-  ${({ theme, segment }) => {
-    if (segment === 'CBWAS')
-      return css`
-        .CBWAS {
-          fill: ${theme.color.main[50]} !important;
-        }
-      `;
-    if (segment === 'S.C.B')
-      return css`
-        .SCB {
-          fill: ${theme.color.main[50]} !important;
-        }
-      `;
-    if (segment === 'BIGBRO')
-      return css`
-        .BIGBRO {
-          fill: ${theme.color.main[50]} !important;
-        }
-      `;
-    if (segment === 'GONGNEWGI')
-      return css`
-        .GONGNEWGI {
-          fill: ${theme.color.main[50]} !important;
-        }
-      `;
-    if (segment === 'SCULFEE')
-      return css`
-        .SCULFEE {
-          fill: ${theme.color.main[50]} !important;
-        }
-      `;
-  }};
 `;
 
 export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 3.75rem;
+  color: inherit;
 `;
 
 export const AdminNav = styled(Link)`
@@ -134,18 +74,36 @@ export const AdminNav = styled(Link)`
 `;
 
 export const MyPageButton = styled(Link)`
+  ${({ theme }) => theme.typo.imfeel.medium};
   display: flex;
+  justify-content: end;
+  width: 5rem;
+  color: inherit;
+  user-select: none;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.main[50]} !important;
+  }
 `;
 
-export const LoginButton = styled(MyPageButton)`
-  margin-left: 1.1875rem;
-  display: flex;
-`;
+export const LoginButton = styled(MyPageButton)``;
 
-export const LogoutButton = styled(MyPageButton)`
-  margin-left: 0.3125rem;
-`;
+export const LogoutButton = styled(MyPageButton)``;
 
 export const LogoWrapper = styled(Link)`
+  ${({ theme }) => theme.typo.imfeel.medium};
+  color: inherit;
+  display: flex;
+  user-select: none;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.main[50]} !important;
+  }
+`;
+
+export const BIGBROCOMPANY = styled(Link)`
+  ${({ theme }) => theme.typo.imfeel.medium};
+  color: ${({ theme }) => theme.color.white};
+  user-select: none;
   display: flex;
 `;

@@ -1,16 +1,27 @@
 import styled from '@emotion/styled';
-import backgroundImg from 'client/../public/backgroundImg.png';
+import Image from 'next/image';
 import Link from 'next/link';
+import { font } from 'shared';
 
 export const Container = styled.div`
   height: 100%;
   display: flex;
+  position: relative;
+`;
+
+export const BackgroundImg = styled(Image)`
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 `;
 
 export const LeftBox = styled.div`
   width: 45vw;
-  background-image: url(${backgroundImg.src});
-  background-size: cover;
+  z-index: 1;
 `;
 
 export const RightBox = styled.div`
@@ -19,15 +30,19 @@ export const RightBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 export const ShadowBox = styled.div`
+  ${({ theme }) => theme.typo.imfeel.medium};
+  font-family: ${font.ImFellGreatPrimer};
+  color: ${({ theme }) => theme.color.white};
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 `;
 
@@ -80,4 +95,37 @@ export const FindPasswordButton = styled(Link)`
   position: absolute;
   right: 0.25rem;
   top: 12rem;
+`;
+
+export const SVGBundleContainer = styled.div`
+  width: 38.24619rem;
+  height: 36.5rem;
+  display: flex;
+  gap: 1.25rem;
+  font-family: ${font.StoopidMarkers};
+  position: relative;
+`;
+
+export const SVGBundleLeftBox = styled.div`
+  display: flex;
+  align-items: end;
+`;
+
+export const SVGBundleMiddleImg = styled(Image)`
+  margin: 1.13rem 0 5.5rem 0;
+`;
+
+export const SVGBundleBottomBox = styled.div`
+  margin-left: 5.81rem;
+`;
+
+export const SVGBundleRightBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AbsoluteImg = styled(Image)`
+  position: absolute;
+  left: 14.62rem;
+  bottom: 0;
 `;
