@@ -62,7 +62,11 @@ const LoginLayout = () => {
         <S.RightBox>
           <S.SVGBundleContainer>
             <S.SVGBundleLeftBox>
-              <Image src={IMG.Login1Img} alt='로그인 이미지 1' />
+              <Image
+                src={IMG.Login1Img}
+                alt='로그인 이미지 1'
+                priority={true}
+              />
             </S.SVGBundleLeftBox>
             <S.SVGBundleRightBox>
               <LoginSVG1 />
