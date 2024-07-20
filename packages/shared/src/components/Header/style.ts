@@ -7,8 +7,9 @@ import type { HeaderPositionType, HeaderType } from 'shared/types';
 export const Container = styled.header<{
   type: HeaderType;
   position: HeaderPositionType;
-  segment: string | null;
 }>`
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 4.8125rem;
   padding: 0 7.5rem;
@@ -21,7 +22,7 @@ export const Container = styled.header<{
   font-family: ${font.ImFellGreatPrimer};
 
   ${({ type, theme }) => {
-    if (type === 'client_clear')
+    if (type === 'client_clear' || type === 'client_img')
       return css`
         background-color: transparent;
       `;
@@ -29,11 +30,6 @@ export const Container = styled.header<{
     if (type === 'client_white')
       return css`
         background-color: ${theme.color.white};
-      `;
-
-    if (type === 'client_img')
-      return css`
-        background-image: url('https://github.com/bigbroCO-team/bigbroCO.-Front/assets/128475660/4355f01f-7bfd-4b1a-a711-dd49e24cf0c1');
       `;
 
     if (type === 'admin' || type === 'client_black')
@@ -82,7 +78,7 @@ export const MyPageButton = styled(Link)`
   user-select: none;
 
   &:hover {
-    color: ${({ theme }) => theme.color.main[50]} !important;
+    color: ${({ theme }) => theme.color.main[50]};
   }
 `;
 
@@ -90,14 +86,16 @@ export const LoginButton = styled(MyPageButton)``;
 
 export const LogoutButton = styled(MyPageButton)``;
 
-export const LogoWrapper = styled(Link)`
+export const BrandWrapper = styled.div<{ isMyBrand: boolean }>`
   ${({ theme }) => theme.typo.imfeel.medium};
-  color: inherit;
+  color: ${({ theme, isMyBrand }) =>
+    isMyBrand ? theme.color.main[50] : 'inherit'};
   display: flex;
   user-select: none;
+  cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.color.main[50]} !important;
+    color: ${({ theme }) => theme.color.main[50]};
   }
 `;
 
