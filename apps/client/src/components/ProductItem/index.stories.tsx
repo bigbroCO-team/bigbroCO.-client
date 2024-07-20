@@ -9,7 +9,6 @@ const meta: Meta<typeof ProductItem> = {
     discountPercent: '20',
     price: '25000',
     productName: 'Big Bro T-shirt',
-    isEdit: false,
   },
 };
 
