@@ -22,9 +22,9 @@ const PorductListLayout: React.FC<ProuctListLayoutProps> = ({ brand }) => {
               <ProductItem
                 key={i}
                 productImgUrl='test'
-                discountPercent='test'
-                price='test'
-                productName='test'
+                discountPercent='10'
+                price='9000'
+                productName='레전드 티셔츠'
               />
             ))}
           </S.ProductContainer>
