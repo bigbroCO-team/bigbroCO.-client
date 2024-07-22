@@ -34,7 +34,7 @@ export const RightBox = styled.div`
 `;
 
 export const ShadowBox = styled.div`
-  ${({ theme }) => theme.typo.imfeel.small};
+  ${({ theme }) => theme.typo.imfeel.medium};
   font-family: ${font.ImFellGreatPrimer};
   color: ${({ theme }) => theme.color.white};
   width: 100%;

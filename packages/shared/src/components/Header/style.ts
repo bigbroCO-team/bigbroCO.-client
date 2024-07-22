@@ -70,7 +70,7 @@ export const AdminNav = styled(Link)`
 `;
 
 export const MyPageButton = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.small};
+  ${({ theme }) => theme.typo.imfeel.medium};
   display: flex;
   justify-content: end;
   width: 5rem;
@@ -87,7 +87,7 @@ export const LoginButton = styled(MyPageButton)``;
 export const LogoutButton = styled(MyPageButton)``;
 
 export const BrandWrapper = styled.div<{ isMyBrand: boolean }>`
-  ${({ theme }) => theme.typo.imfeel.small};
+  ${({ theme }) => theme.typo.imfeel.medium};
   color: ${({ theme, isMyBrand }) =>
     isMyBrand ? theme.color.main[50] : 'inherit'};
   display: flex;
@@ -100,7 +100,7 @@ export const BrandWrapper = styled.div<{ isMyBrand: boolean }>`
 `;
 
 export const BIGBROCOMPANY = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.small};
+  ${({ theme }) => theme.typo.imfeel.medium};
   color: ${({ theme }) => theme.color.white};
   user-select: none;
   display: flex;
