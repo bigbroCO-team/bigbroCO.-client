@@ -8,7 +8,7 @@ interface Props {
   discountPercent: string;
   price: string;
   productName: string;
-  isEdit: boolean;
+  isEdit?: true;
 }
 
 const ProductItem: React.FC<Props> = ({
