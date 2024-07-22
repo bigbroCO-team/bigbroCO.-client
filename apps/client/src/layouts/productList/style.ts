@@ -36,12 +36,9 @@ export const InnerContainer = styled.div`
 `;
 
 export const Title = styled.h1`
+  ${({ theme }) => theme.typo.imfeel.medium};
   color: ${({ theme }) => theme.color.white};
   font-family: ${font.ImFellGreatPrimer};
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   margin: 2.5rem 0 3rem 0;
 `;
 

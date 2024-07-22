@@ -84,6 +84,11 @@ const typo = {
       lineHeight: '2.75rem',
     },
     medium: {
+      fontSize: '2rem',
+      fontWeight: 400,
+      lineHeight: '2.4375rem',
+    },
+    small: {
       fontSize: '1.5rem',
       fontWeight: 400,
       lineHeight: '1.8125rem',
