@@ -61,16 +61,12 @@ export const NavContainer = styled.div`
 `;
 
 export const AdminNav = styled(Link)`
-  // theme에 정의 되어 있지 않아서 임시로 지정
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  ${({ theme }) => theme.typo.imfeel.small};
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
 export const MyPageButton = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.medium};
+  ${({ theme }) => theme.typo.imfeel.small};
   display: flex;
   justify-content: end;
   width: 5rem;
@@ -87,7 +83,7 @@ export const LoginButton = styled(MyPageButton)``;
 export const LogoutButton = styled(MyPageButton)``;
 
 export const BrandWrapper = styled.div<{ isMyBrand: boolean }>`
-  ${({ theme }) => theme.typo.imfeel.medium};
+  ${({ theme }) => theme.typo.imfeel.small};
   color: ${({ theme, isMyBrand }) =>
     isMyBrand ? theme.color.main[50] : 'inherit'};
   display: flex;
@@ -100,7 +96,7 @@ export const BrandWrapper = styled.div<{ isMyBrand: boolean }>`
 `;
 
 export const BIGBROCOMPANY = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.medium};
+  ${({ theme }) => theme.typo.imfeel.small};
   color: ${({ theme }) => theme.color.white};
   user-select: none;
   display: flex;
