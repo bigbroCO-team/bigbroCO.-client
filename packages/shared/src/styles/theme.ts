@@ -1,98 +1,120 @@
+import { css } from '@emotion/react';
+import font from 'shared/styles/font';
+// todo import 문제 해결
+
 const typo = {
   extra: {
-    large: {
-      fontSize: '12.5rem',
-      fontWeight: 800,
-      lineHeight: '14.9375rem',
-    },
-    medium: {
-      fontSize: '10rem',
-      fontWeight: 800,
-      lineHeight: '11.9375rem',
-    },
+    large: css`
+      font-size: 12.5rem;
+      font-weight: 800;
+      line-height: 14.9375rem;
+      font-family: ${font.Pretendard};
+    `,
+    medium: css`
+      font-size: 10rem;
+      font-weight: 800;
+      line-height: 11.9375rem;
+      font-family: ${font.Pretendard};
+    `,
   },
   title: {
-    large: {
-      fontSize: '3rem',
-      fontWeight: 600,
-      lineHeight: '3.625rem',
-    },
-    medium: {
-      fontSize: '2.25rem',
-      fontWeight: 600,
-      lineHeight: '2.6875rem',
-    },
-    small: {
-      fontSize: '1.5rem',
-      fontWeight: 600,
-      lineHeight: '1.9375rem',
-    },
+    large: css`
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 3.625rem;
+      font-family: ${font.Pretendard};
+    `,
+    medium: css`
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 2.6875rem;
+      font-family: ${font.Pretendard};
+    `,
+    small: css`
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.9375rem;
+      font-family: ${font.Pretendard};
+    `,
   },
-  subtitle: {
-    fontSize: '1.125rem',
-    fontWeight: 600,
-    lineHeight: '1.6875rem',
-  },
+  subtitle: css`
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.6875rem;
+    font-family: ${font.Pretendard};
+  `,
   body: {
-    large: {
-      fontSize: '1.125rem',
-      fontWeight: 400,
-      lineHeight: '1.6875rem',
-    },
-    medium: {
-      fontSize: '1rem',
-      fontWeight: 600,
-      lineHeight: '1.375rem',
-    },
-    small: {
-      fontSize: '1rem',
-      fontWeight: 400,
-      lineHeight: '1.375rem',
-    },
+    large: css`
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.6875rem;
+      font-family: ${font.Pretendard};
+    `,
+    medium: css`
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.375rem;
+      font-family: ${font.Pretendard};
+    `,
+
+    small: css`
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.375rem;
+      font-family: ${font.Pretendard};
+    `,
   },
-  label: {
-    fontSize: '0.75rem',
-    fontWeight: 400,
-    lineHeight: '1rem',
-  },
+  label: css`
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    font-family: ${font.Pretendard};
+  `,
   stoopid: {
-    extraLarge: {
-      fontSize: '25rem',
-      fontWeight: 500,
-      lineHeight: '14rem',
-    },
-    large: {
-      fontSize: '16.8rem',
-      fontWeight: 500,
-      lineHeight: '8.2rem',
-    },
-    medium: {
-      fontSize: '12.5rem',
-      fontWeight: 400,
-      lineHeight: '10rem',
-    },
-    small: {
-      fontSize: '2rem',
-      fontWeight: 400,
-      lineHeight: '4rem',
-    },
+    extraLarge: css`
+      font-size: 25rem;
+      font-weight: 500;
+      line-height: 14rem;
+      font-family: ${font.Pretendard};
+    `,
+    large: css`
+      font-size: 16.8rem;
+      font-weight: 500;
+      line-height: 8.2rem;
+      font-family: ${font.Pretendard};
+    `,
+    medium: css`
+      font-size: 12.5rem;
+      font-weight: 400;
+      line-height: 10rem;
+      font-family: ${font.Pretendard};
+    `,
+    small: css`
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 4rem;
+      font-family: ${font.Pretendard};
+    `,
   },
   imfeel: {
-    large: {
-      fontSize: '2.25rem',
-      fontWeight: 400,
-      lineHeight: '2.75rem',
-    },
-    medium: {
-      fontSize: '2rem',
-      fontWeight: 400,
-      lineHeight: '2.4375rem',
-    },
-    small: {
-      fontSize: '1.5rem',
-      fontWeight: 400,
-      lineHeight: '1.8125rem',
-    },
+    large: css`
+      font-size: 2.25rem;
+      font-weight: 400;
+      line-height: 2.75rem;
+      font-family: ${font.ImFellGreatPrimer};
+    `,
+    medium: css`
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.4375rem;
+      font-family: ${font.ImFellGreatPrimer};
+    `,
+    small: css`
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.8125rem;
+      font-family: ${font.ImFellGreatPrimer};
+    `,
   },
 } as const;
 

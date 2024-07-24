@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { font } from 'shared';
 
 export const Container = styled.div`
   width: 100%;
@@ -38,7 +37,6 @@ export const InnerContainer = styled.div`
 export const Title = styled.h1`
   ${({ theme }) => theme.typo.imfeel.medium};
   color: ${({ theme }) => theme.color.white};
-  font-family: ${font.ImFellGreatPrimer};
   margin: 2.5rem 0 3rem 0;
 `;
 

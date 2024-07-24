@@ -1,6 +1,4 @@
-const queryKeys = {
-  client: {},
-  admin: {},
+export const authQueryKeys = {
+  postLogin: () => ['auth', 'login', 'post'],
+  getVerify: () => ['get', 'verify', 'token'],
 } as const;
-
-export default queryKeys;

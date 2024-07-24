@@ -3,8 +3,8 @@
 import * as S from './style';
 import type { HeaderType, HeaderPositionType, BrandType } from 'shared/types';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useGetVerify } from 'shared/hooks';
 
 interface Props {
   type: HeaderType;
@@ -22,10 +22,13 @@ const brandArray: BrandType[] = [
 const Header: React.FC<Props> = ({ type, position = 'fixed' }) => {
   const segment = usePathname();
   const { push } = useRouter();
+  const { data } = useGetVerify();
 
   return (
     <S.Container type={type} position={position}>
-      <S.BIGBROCOMPANY href='/'>BIGBRO COMPANY</S.BIGBROCOMPANY>
+      <S.BIGBROCOMPANY href='/' scroll={false}>
+        BIGBRO COMPANY
+      </S.BIGBROCOMPANY>
       <S.NavContainer>
         {type !== 'admin' ? (
           <>
@@ -47,18 +50,27 @@ const Header: React.FC<Props> = ({ type, position = 'fixed' }) => {
           </>
         ) : (
           <>
-            <S.AdminNav href='/'>상품 관리</S.AdminNav>
-            <S.AdminNav href='/'>주문 내역</S.AdminNav>
+            <S.AdminNav href='/' scroll={false}>
+              상품 관리
+            </S.AdminNav>
+            <S.AdminNav href='/' scroll={false}>
+              주문 내역
+            </S.AdminNav>
           </>
         )}
       </S.NavContainer>
-      <S.LoginButton href='/login'>Login</S.LoginButton>
-      {/* <S.LogoutButton href='/logout'>
-        Logout
-      </S.LogoutButton>
-      <S.MyPageButton href='/'>
-        my page
-      </S.MyPageButton> */}
+      <S.SideButtonBox>
+        {data?.isValidToken ? (
+          <>
+            <S.MyPageButton href='/mypage'>my page</S.MyPageButton>
+            <S.LogoutButton href='/logout'>Logout</S.LogoutButton>
+          </>
+        ) : (
+          <S.LoginButton href='/login' scroll={false}>
+            Login
+          </S.LoginButton>
+        )}
+      </S.SideButtonBox>
     </S.Container>
   );
 };

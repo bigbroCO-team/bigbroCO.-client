@@ -1,6 +1,7 @@
 'use client';
 
-import { Header } from 'shared';
+import { Header } from 'shared/components';
+import { usePostLogin } from 'shared/hooks';
 import * as S from './style';
 import { FormInput } from 'client/components';
 import { InputType, LoginFormType } from 'client/types';
@@ -11,6 +12,10 @@ import { backgroundImg } from 'client/public';
 import * as IMG from 'client/public';
 import Image from 'next/image';
 import { LoginSVG1, LoginSVG2 } from 'client/assets';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import { invalidateQueries } from 'shared/utils';
+import { authQueryKeys } from 'shared';
 
 const LoginLayout = () => {
   const {
@@ -20,10 +25,23 @@ const LoginLayout = () => {
   } = useForm<LoginFormType>({
     resolver: zodResolver(loginFormSchema),
   });
+  const { push } = useRouter();
 
-  const handleFormSubmit: SubmitHandler<LoginFormType> = (data) => {
-    // eslint-disable-next-line no-console
-    console.log(data);
+  const { mutate: postLogin } = usePostLogin({
+    onSuccess: ({ access, refresh }) => {
+      localStorage.setItem('accessToken', access);
+      localStorage.setItem('refreshToken', refresh);
+      invalidateQueries(authQueryKeys.getVerify());
+
+      push('/');
+    },
+    onError: () => {
+      toast.error('로그인에 실패하였습니다');
+    },
+  });
+
+  const handleFormSubmit: SubmitHandler<LoginFormType> = ({ id, password }) => {
+    postLogin({ username: id, password: password });
   };
 
   return (

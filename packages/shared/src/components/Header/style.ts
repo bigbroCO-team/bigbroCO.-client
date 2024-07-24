@@ -19,7 +19,6 @@ export const Container = styled.header<{
   position: ${({ position }) => position};
   z-index: 10;
   transition: all 0.3s;
-  font-family: ${font.ImFellGreatPrimer};
 
   ${({ type, theme }) => {
     if (type === 'client_clear' || type === 'client_img')
@@ -65,11 +64,13 @@ export const AdminNav = styled(Link)`
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
+export const SideButtonBox = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
 export const MyPageButton = styled(Link)`
   ${({ theme }) => theme.typo.imfeel.small};
-  display: flex;
-  justify-content: end;
-  width: 5rem;
   color: inherit;
   user-select: none;
 
@@ -78,7 +79,11 @@ export const MyPageButton = styled(Link)`
   }
 `;
 
-export const LoginButton = styled(MyPageButton)``;
+export const LoginButton = styled(MyPageButton)`
+  width: 5rem;
+  display: flex;
+  justify-content: end;
+`;
 
 export const LogoutButton = styled(MyPageButton)``;
 
