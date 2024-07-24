@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { font } from 'shared/styles';
 
 export const Container = styled.div`
   width: 100vw;
@@ -64,7 +63,6 @@ export const SVGBundle2Container = styled.div`
   flex-direction: column;
   position: relative;
   color: ${({ theme }) => theme.color.white};
-  font-family: ${font.StoopidMarkers};
 `;
 
 export const SVGBundle2TopBox = styled.div`
@@ -99,7 +97,6 @@ export const DescribeBox = styled.div`
   min-width: 49.25rem;
   height: 14rem;
   ${({ theme }) => theme.typo.body.small};
-  font-family: ${font.Pretendard};
 `;
 
 export const SVGBundle2MiddleBox = styled.div`
@@ -190,7 +187,6 @@ export const BrandShadowBox = styled.div`
 export const BrandText = styled.p`
   ${({ theme }) => theme.typo.imfeel.large};
   color: ${({ theme }) => theme.color.white};
-  font-family: ${font.ImFellGreatPrimer};
 `;
 
 export const BrandBox = styled.div`
