@@ -7,8 +7,9 @@ import type { HeaderPositionType, HeaderType } from 'shared/types';
 export const Container = styled.header<{
   type: HeaderType;
   position: HeaderPositionType;
-  segment: string | null;
 }>`
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 4.8125rem;
   padding: 0 7.5rem;
@@ -18,10 +19,9 @@ export const Container = styled.header<{
   position: ${({ position }) => position};
   z-index: 10;
   transition: all 0.3s;
-  font-family: ${font.ImFellGreatPrimer};
 
   ${({ type, theme }) => {
-    if (type === 'client_clear')
+    if (type === 'client_clear' || type === 'client_img')
       return css`
         background-color: transparent;
       `;
@@ -29,11 +29,6 @@ export const Container = styled.header<{
     if (type === 'client_white')
       return css`
         background-color: ${theme.color.white};
-      `;
-
-    if (type === 'client_img')
-      return css`
-        background-image: url('https://github.com/bigbroCO-team/bigbroCO.-Front/assets/128475660/4355f01f-7bfd-4b1a-a711-dd49e24cf0c1');
       `;
 
     if (type === 'admin' || type === 'client_black')
@@ -65,44 +60,48 @@ export const NavContainer = styled.div`
 `;
 
 export const AdminNav = styled(Link)`
-  // theme에 정의 되어 있지 않아서 임시로 지정
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  ${({ theme }) => theme.typo.imfeel.small};
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
-export const MyPageButton = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.medium};
+export const SideButtonBox = styled.div`
   display: flex;
-  justify-content: end;
-  width: 5rem;
+  gap: 0.5rem;
+`;
+
+export const MyPageButton = styled(Link)`
+  ${({ theme }) => theme.typo.imfeel.small};
   color: inherit;
   user-select: none;
 
   &:hover {
-    color: ${({ theme }) => theme.color.main[50]} !important;
+    color: ${({ theme }) => theme.color.main[50]};
   }
 `;
 
-export const LoginButton = styled(MyPageButton)``;
+export const LoginButton = styled(MyPageButton)`
+  width: 5rem;
+  display: flex;
+  justify-content: end;
+`;
 
 export const LogoutButton = styled(MyPageButton)``;
 
-export const LogoWrapper = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.medium};
-  color: inherit;
+export const BrandWrapper = styled.div<{ isMyBrand: boolean }>`
+  ${({ theme }) => theme.typo.imfeel.small};
+  color: ${({ theme, isMyBrand }) =>
+    isMyBrand ? theme.color.main[50] : 'inherit'};
   display: flex;
   user-select: none;
+  cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.color.main[50]} !important;
+    color: ${({ theme }) => theme.color.main[50]};
   }
 `;
 
 export const BIGBROCOMPANY = styled(Link)`
-  ${({ theme }) => theme.typo.imfeel.medium};
+  ${({ theme }) => theme.typo.imfeel.small};
   color: ${({ theme }) => theme.color.white};
   user-select: none;
   display: flex;

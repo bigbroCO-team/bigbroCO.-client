@@ -1,44 +1,76 @@
 'use client';
 
 import * as S from './style';
-import type { HeaderType, HeaderPositionType } from 'shared/types';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import type { HeaderType, HeaderPositionType, BrandType } from 'shared/types';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useGetVerify } from 'shared/hooks';
 
 interface Props {
   type: HeaderType;
   position?: HeaderPositionType;
 }
 
+const brandArray: BrandType[] = [
+  'CBWAS',
+  'S.C.B',
+  'BIGBRO',
+  'GONGNEWGI',
+  'SCULFEE',
+] as const;
+
 const Header: React.FC<Props> = ({ type, position = 'fixed' }) => {
-  const segment = useSelectedLayoutSegment();
+  const segment = usePathname();
+  const { push } = useRouter();
+  const { data } = useGetVerify();
 
   return (
-    <S.Container type={type} position={position} segment={segment}>
-      <S.BIGBROCOMPANY href='/'>BIGBRO COMPANY</S.BIGBROCOMPANY>
+    <S.Container type={type} position={position}>
+      <S.BIGBROCOMPANY href='/' scroll={false}>
+        BIGBRO COMPANY
+      </S.BIGBROCOMPANY>
       <S.NavContainer>
-        {type !== 'admin' && (
+        {type !== 'admin' ? (
           <>
-            <S.LogoWrapper href='/CBWAS'>CBWAS</S.LogoWrapper>
-            <S.LogoWrapper href='/S.C.B'>S.C.B</S.LogoWrapper>
-            <S.LogoWrapper href='/BIGBRO'>BIGBRO</S.LogoWrapper>
-            <S.LogoWrapper href='/GONGNEWGI'>GONGNEWGI</S.LogoWrapper>
-            <S.LogoWrapper href='/SCULFEE'>SCULFEE</S.LogoWrapper>
+            {brandArray.map((brand) => {
+              const path = `/${brand}`;
+              const isMyBrand = path === segment;
+              const handleBrandClick = () => push(path);
+
+              return (
+                <S.BrandWrapper
+                  onClick={handleBrandClick}
+                  isMyBrand={isMyBrand}
+                  key={brand}
+                >
+                  {brand}
+                </S.BrandWrapper>
+              );
+            })}
           </>
-        )}
-        {type === 'admin' && (
+        ) : (
           <>
-            <S.AdminNav href='/'>상품 관리</S.AdminNav>
-            <S.AdminNav href='/'>주문 내역</S.AdminNav>
+            <S.AdminNav href='/' scroll={false}>
+              상품 관리
+            </S.AdminNav>
+            <S.AdminNav href='/' scroll={false}>
+              주문 내역
+            </S.AdminNav>
           </>
         )}
       </S.NavContainer>
-      <S.LoginButton href='/login'>Login</S.LoginButton>
-      {/* <S.LogoutButton href='/logout'>
-        Logout
-      </S.LogoutButton>
-      <S.MyPageButton href='/'>
-        my page
-      </S.MyPageButton> */}
+      <S.SideButtonBox>
+        {data?.isValidToken ? (
+          <>
+            <S.MyPageButton href='/mypage'>my page</S.MyPageButton>
+            <S.LogoutButton href='/logout'>Logout</S.LogoutButton>
+          </>
+        ) : (
+          <S.LoginButton href='/login' scroll={false}>
+            Login
+          </S.LoginButton>
+        )}
+      </S.SideButtonBox>
     </S.Container>
   );
 };

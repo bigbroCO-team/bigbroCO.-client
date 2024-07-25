@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
-import { font } from 'shared';
 
 export const Container = styled.div`
   height: 100%;
@@ -34,8 +33,7 @@ export const RightBox = styled.div`
 `;
 
 export const ShadowBox = styled.div`
-  ${({ theme }) => theme.typo.imfeel.medium};
-  font-family: ${font.ImFellGreatPrimer};
+  ${({ theme }) => theme.typo.imfeel.small};
   color: ${({ theme }) => theme.color.white};
   width: 100%;
   height: 100%;
@@ -102,7 +100,6 @@ export const SVGBundleContainer = styled.div`
   height: 36.5rem;
   display: flex;
   gap: 1.25rem;
-  font-family: ${font.StoopidMarkers};
   position: relative;
 `;
 
