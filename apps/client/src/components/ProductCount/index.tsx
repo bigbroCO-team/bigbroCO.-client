@@ -1,7 +1,7 @@
 import { SelectOptionType } from 'client/types';
 import * as S from './style';
 import { MinusIcon, PlusIcon, XIcon } from 'client/assets';
-import { toLocalString } from 'client/utils';
+import { toLocaleString } from 'client/utils';
 import { toast } from 'react-toastify';
 
 interface ProductCountProps {
@@ -77,7 +77,7 @@ const ProductCount: React.FC<ProductCountProps> = ({
             <PlusIcon />
           </S.CountButton>
         </S.CountWrapper>
-        <S.Price>{toLocalString(price)}원</S.Price>
+        <S.Price>{toLocaleString(price)}원</S.Price>
       </S.Bottom>
     </S.Container>
   );

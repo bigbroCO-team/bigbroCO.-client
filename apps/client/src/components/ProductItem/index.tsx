@@ -1,7 +1,7 @@
 'use client';
 
+import { toLocaleString } from 'client/utils';
 import * as S from './style';
-import { toLocalString } from 'client/utils';
 
 interface Props {
   id: number;
@@ -20,7 +20,7 @@ const ProductItem: React.FC<Props> = ({
   name,
   isEdit,
 }) => {
-  const productPrice = toLocalString(String(price));
+  const productPrice = toLocaleString(String(price));
 
   return (
     <S.Wrapper href={`product/${id}`}>

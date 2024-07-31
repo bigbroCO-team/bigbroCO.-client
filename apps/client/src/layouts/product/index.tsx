@@ -11,7 +11,7 @@ import {
 } from 'client/components';
 import { useState } from 'react';
 import { SelectOptionType } from 'client/types';
-import { toLocalString } from 'client/utils';
+import { toLocaleString } from 'client/utils';
 
 interface ProductLayoutProps {
   id: string;
@@ -70,7 +70,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
         <S.BottomBox>
           <S.PriceBox>
             총 상품 금액:
-            <S.TotalPrice>{toLocalString(totalPrice)}원</S.TotalPrice>
+            <S.TotalPrice>{toLocaleString(totalPrice)}원</S.TotalPrice>
           </S.PriceBox>
           <S.ButtonBox>
             <S.CartButton>장바구니</S.CartButton>
