@@ -1,1 +1,2 @@
-export { default as numberLocalString } from './numberLocalString';
+export { default as toLocalString } from './toLocalString';
+export { default as minutesToMs } from './minutesToMs';
