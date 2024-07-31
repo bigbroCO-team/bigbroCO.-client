@@ -6,3 +6,5 @@ export { default as PlusIcon } from './PlusIcon';
 export { default as XIcon } from './XIcon';
 export * from './mainPageSVG';
 export * from './loginPageSVG';
+export { default as BackIcon } from './BackIcon';
+export { default as SelectIcon } from './SelectIcon';
