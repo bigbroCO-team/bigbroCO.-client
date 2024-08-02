@@ -17,8 +17,19 @@ interface ProductLayoutProps {
   id: string;
 }
 
+const defaultData = {
+  name: '상품',
+  discount: 0,
+  price: 0,
+  description: '상품 설명',
+  options: [],
+} as const;
+
 const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
   const { data } = useGetProductDetail(Number(id));
+
+  const { name, discount, price, description, options } = data || defaultData;
+
   const [selectedProductList, setSelectedProductList] = useState<
     SelectOptionType[]
   >([]);
@@ -38,20 +49,20 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
       </S.LeftContainer>
       <S.RightContainer>
         <ProductDetailInfo
-          name={data ? data.name : '상품'}
-          discount={data ? data.discount : 0}
-          price={data ? data.price : 0}
-          description={data ? data.description : '상품 설명'}
+          name={name}
+          discount={discount}
+          price={price}
+          description={description}
         />
         <S.Hr />
         <S.DeliveryBox>
           <S.DeliveryText>배송</S.DeliveryText>
-          <S.DeliveryText>CJ배송 (출고 후 2~3일 소요)</S.DeliveryText>
+          <S.DeliveryText>로젠택배 (출고 후 2~3일 소요)</S.DeliveryText>
         </S.DeliveryBox>
         <S.Hr />
         <S.OptionWrapper>
           <ProductOption
-            options={data ? data.options : []}
+            options={[...options]}
             selectedProductList={selectedProductList}
             setSelectedProductList={setSelectedProductList}
           />
@@ -62,7 +73,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
               name={name}
               selectedProductList={selectedProductList}
               setSelectedProductList={setSelectedProductList}
-              price={data ? data.price : 0}
+              price={price}
             />
           ))}
         </S.OptionWrapper>
