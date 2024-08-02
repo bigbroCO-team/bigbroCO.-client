@@ -35,8 +35,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
   >([]);
 
   const totalPrice =
-    selectedProductList.reduce((a, c) => a + c.count, 0) *
-    (data ? data?.price : 0);
+    selectedProductList.reduce((a, c) => a + c.count, 0) * price;
 
   return (
     <S.Container>
