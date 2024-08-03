@@ -1,5 +1,5 @@
 import * as S from './style';
-import { numberLocalString } from 'client/utils';
+import { toLocaleString } from 'client/utils';
 
 interface Props {
   isPreparing: boolean;
@@ -56,11 +56,9 @@ const DeliveryInfo: React.FC<Props> = ({
           <S.ProductSecondaryInfo>
             <S.ProductNumber>{productNumber}개</S.ProductNumber>
             <S.ProductPriceBox>
-              <S.ProductPrice>
-                {numberLocalString(productPrice)}원
-              </S.ProductPrice>
+              <S.ProductPrice>{toLocaleString(productPrice)}원</S.ProductPrice>
               <S.BeforeDiscountPrice>
-                {numberLocalString(beforeDiscountPrice)}원
+                {toLocaleString(beforeDiscountPrice)}원
               </S.BeforeDiscountPrice>
             </S.ProductPriceBox>
           </S.ProductSecondaryInfo>

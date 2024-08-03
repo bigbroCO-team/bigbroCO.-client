@@ -17,7 +17,7 @@ export const Container = styled.header<{
   align-items: center;
   justify-content: space-between;
   position: ${({ position }) => position};
-  z-index: 10;
+  z-index: 5;
   transition: all 0.3s;
 
   ${({ type, theme }) => {

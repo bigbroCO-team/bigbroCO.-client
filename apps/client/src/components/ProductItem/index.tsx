@@ -1,31 +1,37 @@
 'use client';
 
+import { toLocaleString } from 'client/utils';
 import * as S from './style';
-import { numberLocalString } from 'client/utils';
 
 interface Props {
+  id: number;
   productImgUrl: string;
-  discountPercent: string;
-  price: string;
-  productName: string;
+  discountPercent: number;
+  price: number;
+  name: string;
   isEdit?: true;
 }
 
 const ProductItem: React.FC<Props> = ({
+  id,
   productImgUrl,
   discountPercent,
   price,
-  productName,
+  name,
   isEdit,
 }) => {
+  const productPrice = toLocaleString(String(price));
+
   return (
-    <S.Wrapper>
+    <S.Wrapper href={`product/${id}`}>
       <S.ImgContainer src={productImgUrl} />
       <S.PriceInform>
-        <S.DiscountText>{discountPercent}%</S.DiscountText>
-        <S.PriceText>{numberLocalString(price)}</S.PriceText>
+        {!!discountPercent && (
+          <S.DiscountText>{discountPercent}%</S.DiscountText>
+        )}
+        <S.PriceText>{productPrice}</S.PriceText>
       </S.PriceInform>
-      <S.ClothesText>{productName}</S.ClothesText>
+      <S.ClothesText>{name}</S.ClothesText>
       {isEdit && <S.EditText>수정하기</S.EditText>}
     </S.Wrapper>
   );

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { checkUrl } from 'shared/utils';
+import { authUrl } from 'shared/libs';
 
 export const axiosInstance = axios.create({
   baseURL: '/api/v1',
@@ -8,8 +9,6 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((config) => {
   if (config.url && checkUrl(config.url)) {
-    console.log(config);
-
     return config;
   }
 
@@ -29,7 +28,8 @@ axiosInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   (error) => {
-    if (error.response.data) return error.response.data;
+    // 요청 url이 /auth/verify/ 이라면 data를 반환
+    if (error.config.url === authUrl.postVerify()) return error.response.data;
 
     return Promise.reject(error);
   }

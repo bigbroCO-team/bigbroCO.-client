@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +17,6 @@ export const ImgContainer = styled.img`
 
 export const PriceInform = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 0.5rem;
 `;
 
