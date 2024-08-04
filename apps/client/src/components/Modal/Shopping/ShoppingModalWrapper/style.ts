@@ -21,7 +21,7 @@ export const ModalInner = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 0.875rem;
-  background: ${({ theme }) => `
+  background-color: ${({ theme }) => `
     linear-gradient(0deg, ${theme.color.grey[500]} 0%, ${theme.color.grey[500]} 100%), 
     ${theme.color.grey[25]}
   `};
