@@ -5,7 +5,7 @@ export const Container = styled.div<{ state: boolean }>`
   width: 37.5rem;
   height: 14.3125rem;
   padding: 1.5rem;
-  background-color: black;
+  background-color: ${({ theme }) => theme.color.black};
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;

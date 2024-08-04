@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import * as S from './style';
 
 interface Props {
-  Id: number;
-  AddressName: string;
+  Key: number;
+  AddressTag: string;
   PhoneNumber: string;
   Address: string;
   Detail: string;
@@ -13,8 +13,8 @@ interface Props {
 }
 
 const AddressInfo: React.FC<Props> = ({
-  Id,
-  AddressName,
+  Key,
+  AddressTag,
   PhoneNumber,
   Address,
   Detail,
@@ -24,16 +24,16 @@ const AddressInfo: React.FC<Props> = ({
   const information = [PhoneNumber, Address, Detail];
 
   const infoModify = () => {
-    alert(`modify ${Id}`);
+    alert(`modify ${Key}`);
   };
 
   const infoDelete = () => {
-    alert(`modify ${Id}`);
+    alert(`modify ${Key}`);
   };
 
   return (
     <S.Container state={selected}>
-      <S.TitleSmall>{AddressName}</S.TitleSmall>
+      <S.TitleSmall>{AddressTag}</S.TitleSmall>
       {information.map((el, idx) => (
         <S.BodySmall key={idx}>{el}</S.BodySmall>
       ))}
