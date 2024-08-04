@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-export const Container = styled.div`
-  height: 100%;
+export const Container = styled.div<{ length: number }>`
+  height: ${({ length }) => (length > 2 ? 'auto' : '100vh')};
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.color.black};
