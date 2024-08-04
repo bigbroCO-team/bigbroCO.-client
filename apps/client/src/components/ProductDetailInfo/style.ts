@@ -74,7 +74,10 @@ export const SVGBox = styled.div`
   justify-content: center;
 `;
 
-export const DescriptionText = styled.p`
+export const Description = styled.p`
   ${({ theme }) => theme.typo.body.small};
   color: ${({ theme }) => theme.color.white};
+  white-space: pre-wrap;
+  height: 14rem;
+  overflow-y: scroll;
 `;

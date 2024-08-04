@@ -7,8 +7,8 @@ export const authUrl = {
 } as const;
 
 export const productUrl = {
-  getProductById: (id: number) => `/product/${id}`,
-  getProductByQuery: (query: BrandType) => `/product/?catecory=${query}`,
+  getProductDetailById: (id: number) => `/product/${id}`,
+  getProductListByQuery: (query: BrandType) => `/product?category=${query}`,
 } as const;
 
 export const addressUrl = {

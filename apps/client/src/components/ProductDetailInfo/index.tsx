@@ -2,38 +2,34 @@ import { ShareIcon } from 'client/assets';
 import * as S from './style';
 
 interface Props {
-  productName: string;
-  productPercent: number;
-  usuallyPrice: number;
-  isSale: boolean;
-  descriptionTitle: string;
-  descriptionContent: string;
+  name: string;
+  discount: number;
+  price: number;
+  description: string;
 }
 
 const ProductDetailInfo: React.FC<Props> = ({
-  productName,
-  productPercent,
-  usuallyPrice,
-  isSale,
-  descriptionTitle,
-  descriptionContent,
+  name,
+  discount,
+  price,
+  description,
 }) => {
-  const salePrice = isSale
-    ? (usuallyPrice * (1 - productPercent / 100)).toLocaleString()
-    : usuallyPrice.toLocaleString();
+  const salePrice = discount
+    ? (price * (100 - discount / 100)).toLocaleString()
+    : price.toLocaleString();
 
-  const productPrice = usuallyPrice.toLocaleString();
+  const productPrice = price.toLocaleString();
 
   return (
     <S.Wrapper>
       <S.ProductInfoBox>
-        <S.ProductName>{productName}</S.ProductName>
+        <S.ProductName>{name}</S.ProductName>
         <S.ProductPrice>
           <S.ProductDetailPrice>
-            {isSale ? (
+            {discount ? (
               <>
                 <S.ActualPriceBox>
-                  <S.ProductPercent>{productPercent}%</S.ProductPercent>
+                  <S.ProductPercent>{discount}%</S.ProductPercent>
                   <S.ActualPriceText>{salePrice}원</S.ActualPriceText>
                 </S.ActualPriceBox>
                 <S.UsuallyPrice>{productPrice}</S.UsuallyPrice>
@@ -52,11 +48,7 @@ const ProductDetailInfo: React.FC<Props> = ({
           </S.ShareButton>
         </S.ProductPrice>
       </S.ProductInfoBox>
-      <div>
-        <S.DescriptionText>{descriptionTitle}</S.DescriptionText>
-        <br />
-        <S.DescriptionText>{descriptionContent}</S.DescriptionText>
-      </div>
+      <S.Description>{description}</S.Description>
     </S.Wrapper>
   );
 };
