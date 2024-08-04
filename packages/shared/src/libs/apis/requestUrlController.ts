@@ -10,3 +10,10 @@ export const productUrl = {
   getProductById: (id: number) => `/product/${id}`,
   getProductByQuery: (query: BrandType) => `/product/?catecory=${query}`,
 } as const;
+
+export const addressUrl = {
+  getAddress: () => '/address',
+  postAddress: () => '/address',
+  putAddress: (id: number) => `/address/${id}`,
+  deleteAddress: (id: number) => `/address/${id}`,
+}
