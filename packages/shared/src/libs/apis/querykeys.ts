@@ -4,11 +4,12 @@ export const authQueryKeys = {
   postLogin: () => ['auth', 'login', 'post'],
   getVerify: () => ['get', 'verify', 'token'],
 } as const;
+
 export const addressQueryKeys = {
-  getAddress: () => ['get', 'address', 'token'],
-  postAddress: () => ['post', 'address', 'token'],
-  putAddress: (id: number) => ['put', `address/${id}`, 'token'],
-  deleteAddress: (id: number) => ['delete', `address/${id}`, 'token'],
+  getAddress: () => ['get', 'address', 'list'],
+  postAddress: () => ['post', 'address', 'add'],
+  putAddress: (id: number) => ['put', `address/${id}`, 'modify'],
+  deleteAddress: (id: number) => ['delete', `address/${id}`],
 } as const;
 
 export const productQueryKeys = {
