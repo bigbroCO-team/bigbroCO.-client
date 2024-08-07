@@ -8,5 +8,5 @@ export const Wrapper = styled.div`
   width: 100%;
 
   border-radius: 0.75rem;
-  background: ${({ theme }) => theme.color.grey[25]};
+  background-color: ${({ theme }) => theme.color.grey[25]};
 `;
