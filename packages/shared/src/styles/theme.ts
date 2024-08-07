@@ -46,7 +46,7 @@ const typo = {
   body: {
     large: css`
       font-size: 1.125rem;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.6875rem;
       font-family: ${font.Pretendard};
     `,
