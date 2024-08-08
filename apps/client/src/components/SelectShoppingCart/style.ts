@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   gap: 1.75rem;
   width: 100%;
-  background: ${({ theme }) => theme.color.background}; //문제 시 삭제
+  background-color: ${({ theme }) => theme.color.background}; //문제 시 삭제
 `;
 
 export const SelectAllContainer = styled.div`
@@ -39,7 +39,7 @@ export const SelectAllText = styled.p`
 export const GrayBar = styled.div`
   width: 0.0625rem;
   height: 1.25rem;
-  background: ${({ theme }) => theme.color.grey[800]};
+  background-color: ${({ theme }) => theme.color.grey[800]};
 `;
 
 export const DeleteButton = styled.button`
@@ -50,7 +50,7 @@ export const DeleteButton = styled.button`
 export const MapGrayBar = styled.div`
   width: 100%;
   height: 0.0625rem;
-  background: ${({ theme }) => theme.color.grey[800]};
+  background-color: ${({ theme }) => theme.color.grey[800]};
 `;
 
 export const ProductBox = styled.div<{ isRemoving: boolean }>`
