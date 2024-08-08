@@ -3,12 +3,19 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+`;
+
+export const InfoWrapper = styled.div`
+  display: flex;
+  width: 100%;
   padding: 1.5rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
   border: 0.0625rem solid ${({ theme }) => theme.color.grey[100]};
-  background: ${({ theme }) => theme.color.background}; //문제 시 삭제
 `;
 
 export const ProductContainer = styled.div`
@@ -50,4 +57,15 @@ export const BorderBar = styled.div`
 export const TotalPriceText = styled.p`
   ${({ theme }) => theme.typo.title.small};
   color: ${({ theme }) => theme.color.white};
+`;
+
+export const SaveButton = styled.button`
+  ${({ theme }) => theme.typo.body.medium};
+  color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.main[50]};
+  display: flex;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  justify-content: center;
+  align-items: center;
 `;
