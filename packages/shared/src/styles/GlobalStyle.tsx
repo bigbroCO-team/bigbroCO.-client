@@ -1,15 +1,16 @@
 import { Global, css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
+import { font } from 'shared/styles';
 
 const GlobalStyle = () => (
   <Global
     styles={css`
       ${emotionReset}
 
-      body, * {
+      body,
+      * {
         font-family:
-          'Pretendard Variable',
-          Pretendard,
+          ${font.Pretendard},
           -apple-system,
           BlinkMacSystemFont,
           system-ui,
@@ -27,10 +28,10 @@ const GlobalStyle = () => (
       }
 
       body {
-        background: '#ffffff';
+        background: '#1A1918';
         height: 100vh;
         height: 100dvh;
-        overscroll-behavior-y: none;
+        overscroll-behavior: none;
       }
 
       a {
