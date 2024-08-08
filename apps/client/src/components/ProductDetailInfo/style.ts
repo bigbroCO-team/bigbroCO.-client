@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6875rem;
-  background: ${({ theme }) => theme.color.background};
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const ProductInfoBox = styled.div`

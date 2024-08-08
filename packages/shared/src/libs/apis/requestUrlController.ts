@@ -16,4 +16,8 @@ export const addressUrl = {
   postAddress: () => '/address',
   putAddress: (id: number) => `/address/${id}`,
   deleteAddress: (id: number) => `/address/${id}`,
-}
+};
+
+export const cartUrl = {
+  postCart: () => '/cart',
+} as const;

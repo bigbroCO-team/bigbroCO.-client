@@ -46,7 +46,7 @@ const typo = {
   body: {
     large: css`
       font-size: 1.125rem;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.6875rem;
       font-family: ${font.Pretendard};
     `,
@@ -75,25 +75,25 @@ const typo = {
       font-size: 25rem;
       font-weight: 500;
       line-height: 14rem;
-      font-family: ${font.Pretendard};
+      font-family: ${font.StoopidMarkers};
     `,
     large: css`
       font-size: 16.8rem;
       font-weight: 500;
       line-height: 8.2rem;
-      font-family: ${font.Pretendard};
+      font-family: ${font.StoopidMarkers};
     `,
     medium: css`
       font-size: 12.5rem;
       font-weight: 400;
       line-height: 10rem;
-      font-family: ${font.Pretendard};
+      font-family: ${font.StoopidMarkers};
     `,
     small: css`
       font-size: 2rem;
       font-weight: 400;
       line-height: 4rem;
-      font-family: ${font.Pretendard};
+      font-family: ${font.StoopidMarkers};
     `,
   },
   imfeel: {

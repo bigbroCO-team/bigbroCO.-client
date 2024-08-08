@@ -1,6 +1,6 @@
 'use client';
 
-import { Header, useGetProductDetail } from 'shared';
+import { Header, PostCartType, useGetProductDetail, usePostCart } from 'shared';
 import * as S from './style';
 import { BackIcon } from 'client/assets';
 import {
@@ -12,6 +12,7 @@ import {
 import { useState } from 'react';
 import { SelectOptionType } from 'client/types';
 import { toLocaleString } from 'client/utils';
+import { toast } from 'react-toastify';
 
 interface ProductLayoutProps {
   id: string;
@@ -27,15 +28,36 @@ const defaultData = {
 
 const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
   const { data } = useGetProductDetail(Number(id));
-
   const { name, discount, price, description, options } = data || defaultData;
-
   const [selectedProductList, setSelectedProductList] = useState<
     SelectOptionType[]
   >([]);
+  const { mutate: postCart } = usePostCart({
+    onSuccess: () => toast.success('장바구니에 추가되었습니다.'),
+    onError: () => toast.error('에러가 발생하였습니다.'),
+  });
+
+  const sortedSelectedProductList = selectedProductList.sort(
+    (a, b) => a.id - b.id
+  );
 
   const totalPrice =
     selectedProductList.reduce((a, c) => a + c.count, 0) * price;
+
+  const handleCartButtonClick = () => {
+    if (!selectedProductList.length)
+      return toast.error('장바구니에 추가할 상품이 없습니다.');
+
+    const body: PostCartType[] = selectedProductList.map(
+      ({ product, count, id }) => ({
+        product: product,
+        count: count,
+        option: id,
+      })
+    );
+
+    postCart(body);
+  };
 
   return (
     <S.Container>
@@ -65,7 +87,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
             selectedProductList={selectedProductList}
             setSelectedProductList={setSelectedProductList}
           />
-          {selectedProductList.map(({ id, name }) => (
+          {sortedSelectedProductList.map(({ id, name }) => (
             <ProductCount
               key={id}
               id={id}
@@ -83,7 +105,9 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
             <S.TotalPrice>{toLocaleString(totalPrice)}원</S.TotalPrice>
           </S.PriceBox>
           <S.ButtonBox>
-            <S.CartButton>장바구니</S.CartButton>
+            <S.CartButton onClick={handleCartButtonClick}>
+              장바구니
+            </S.CartButton>
             <S.BuyButton>구매하기</S.BuyButton>
           </S.ButtonBox>
         </S.BottomBox>

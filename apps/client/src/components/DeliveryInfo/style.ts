@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 0.75rem;
-  background: ${({ theme }) => theme.color.background};
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const ProductInfo = styled.div`
@@ -123,5 +123,5 @@ export const Button = styled.button`
   gap: 0.5rem;
 
   border: 0.0625rem solid ${({ theme }) => theme.color.grey[300]};
-  background: ${({ theme }) => theme.color.background};
+  background-color: ${({ theme }) => theme.color.background};
 `;

@@ -16,3 +16,7 @@ export const productQueryKeys = {
   getProductDetailById: (id: number) => ['product', 'detail', String(id)],
   getProductListByQuery: (query: BrandType) => ['product', 'list', query],
 } as const;
+
+export const cartQueryKeys = {
+  postCart: () => ['post', 'cart', 'add'],
+} as const;
