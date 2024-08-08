@@ -31,17 +31,6 @@ export const RightBox = styled.div`
   margin-top: 3.5rem;
 `;
 
-export const SaveButton = styled.button`
-  ${({ theme }) => theme.typo.body.medium};
-  color: ${({ theme }) => theme.color.black};
-  background-color: ${({ theme }) => theme.color.main[50]};
-  display: flex;
-  width: 100%;
-  padding: 0.75rem 2rem;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
