@@ -13,6 +13,7 @@ export const productUrl = {
 
 export const addressUrl = {
   getAddress: () => '/address',
+  getAddressById: (id: number) => `/address/${id}`,
   postAddress: () => '/address',
   putAddress: (id: number) => `/address/${id}`,
   deleteAddress: (id: number) => `/address/${id}`,

@@ -8,8 +8,8 @@ export const authQueryKeys = {
 export const addressQueryKeys = {
   getAddress: () => ['get', 'address', 'list'],
   postAddress: () => ['post', 'address', 'add'],
-  putAddress: (id: number) => ['put', `address/${id}`, 'modify'],
-  deleteAddress: (id: number) => ['delete', `address/${id}`],
+  putAddress: () => ['put', 'modify', 'address'],
+  deleteAddress: (id: number) => ['delete', 'address', id],
 } as const;
 
 export const productQueryKeys = {
