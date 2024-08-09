@@ -4,11 +4,13 @@ import { addressQueryKeys, addressUrl, get } from 'shared/libs';
 import { AddressDataType } from 'shared/types';
 
 export const useGetAddress = (
-  options?: Omit<UseQueryOptions<AddressDataType[] | null, AxiosError>, 'queryKey'>
+  options?: Omit<
+    UseQueryOptions<AddressDataType[] | null, AxiosError>,
+    'queryKey'
+  >
 ) =>
   useQuery({
     queryKey: addressQueryKeys.getAddress(),
-    queryFn: () =>
-      get<AddressDataType[]>(addressUrl.getAddress()),
+    queryFn: () => get<AddressDataType[]>(addressUrl.getAddress()),
     ...options,
   });
