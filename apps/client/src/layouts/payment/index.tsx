@@ -1,17 +1,31 @@
 'use client';
 
-import { Header } from 'shared';
+import { AddressDataType, getAddress, Header } from 'shared';
 import * as S from './style';
 import { SelectIcon } from 'client/assets';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toLocaleString } from 'client/utils';
 import { toTelFormat } from 'shared/utils';
+import { useStore } from 'client/stores';
 
 const PaymentLayout = () => {
   const [isAccordion, setIsAccordion] = useState(false);
+  const { selectedAddress } = useStore();
+  const [addressData, setAddressData] = useState<AddressDataType | null>(null);
 
   const handlePaymentProductListButtonCLick = () =>
     setIsAccordion((prev) => !prev);
+
+  const fetchingAddress = async () => {
+    if (selectedAddress) {
+      const data = await getAddress(selectedAddress);
+      setAddressData(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchingAddress();
+  }, [selectedAddress]);
 
   return (
     <S.Container>
@@ -55,17 +69,17 @@ const PaymentLayout = () => {
         <S.DeliveryInfoBox>
           <S.DeliveryInfoHeader>
             배송지 정보
-            <S.DeliveryInfoModifyButton href='/adress'>
+            <S.DeliveryInfoModifyButton href='/address'>
               변경하기
             </S.DeliveryInfoModifyButton>
           </S.DeliveryInfoHeader>
-          {!!1 && (
+          {selectedAddress && addressData && (
             <>
               <S.DeliveryMiddle>
-                <S.DeliveryName>{}김주은</S.DeliveryName>
-                <S.DeliveryAdress>{}목포</S.DeliveryAdress>
+                <S.DeliveryName>{addressData.name}</S.DeliveryName>
+                <S.DeliveryAdress>{addressData.address}</S.DeliveryAdress>
                 <S.DeliveryPhoneNumber>
-                  {toTelFormat('00000000000')}
+                  {toTelFormat(addressData.phone)}
                 </S.DeliveryPhoneNumber>
               </S.DeliveryMiddle>
               <S.DeliveryRequestInput placeholder='배송 시 요청사항을 입력해주세요' />
