@@ -7,12 +7,12 @@ const LeftArrow = () => {
       viewBox='0 0 8 15'
       fill='none'
     >
-      <g clip-path='url(#clip0_257_9128)'>
+      <g clipPath='url(#clip0_257_9128)'>
         <path
           d='M7 13.5L1.70711 8.20711C1.31658 7.81658 1.31658 7.18342 1.70711 6.79289L7 1.5'
           stroke='#8C8C8C'
-          stroke-width='2'
-          stroke-linecap='round'
+          strokeWidth='2'
+          strokeLinecap='round'
         />
       </g>
       <defs>
