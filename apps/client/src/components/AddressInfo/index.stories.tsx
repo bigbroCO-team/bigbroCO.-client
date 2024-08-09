@@ -12,22 +12,10 @@ type Story = StoryObj<typeof AddressInfo>;
 
 export const Primary: Story = {
   args: {
-    Key: 1,
-    AddressTag: '홍길동(집)',
-    PhoneNumber: '010-1234-5678',
-    Address: '광주광역시 광산구 송정로 123',
-    Detail: '광주소프트웨어마이스터고',
-    IsSelected: false,
-  },
-};
-
-export const Selected: Story = {
-  args: {
-    Key: 1,
-    AddressTag: '홍길동(집)',
-    PhoneNumber: '010-1234-5678',
-    Address: '광주광역시 광산구 송정로 123',
-    Detail: '광주소프트웨어마이스터고',
-    IsSelected: true,
+    id: 1,
+    tag: '학교',
+    phone: '01012345678',
+    address: '광주소프트웨어마이스터고등학교',
+    detail: '기숙사 택배보관함',
   },
 };

@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
-export const Container = styled.div<{ state: boolean }>`
+export const Container = styled.div<{ isSelected: boolean }>`
   display: flex;
-  width: 37.5rem;
-  height: 14.3125rem;
-  padding: 1.5rem;
+  width: 100%;
   background-color: ${({ theme }) => theme.color.black};
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   color: ${({ theme }) => theme.color.white};
-  border: ${({ state, theme }) =>
-    state ? `0.0625rem solid ${theme.color.main[50]}` : 'none'};
+  padding: ${({ isSelected }) => (isSelected ? '1.4375rem' : '1.5rem')};
+  border: ${({ isSelected, theme }) =>
+    isSelected ? `0.0625rem solid ${theme.color.main[50]}` : 'none'};
   gap: 0.75rem;
 `;
 
@@ -25,24 +25,39 @@ export const BodySmall = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  width: 34.375rem;
+  width: 100%;
   justify-content: space-between;
+  margin-top: 0.75rem;
 `;
 
 export const InfoButtonContainer = styled.div`
   display: flex;
+  gap: 1.5rem;
 `;
 
-export const InfoButton = styled.button`
+export const InfoWrapper = styled.div`
   display: flex;
-  height: 3rem;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const ModifyButton = styled(Link)`
+  display: flex;
   color: ${({ theme }) => theme.color.grey[300]};
   ${({ theme }) => theme.typo.body.medium};
   padding: 0.75rem 2rem;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  margin-right: 1.5rem;
+  border: 0.0625rem solid ${({ theme }) => theme.color.grey[300]};
+`;
+
+export const DeleteButton = styled.button`
+  display: flex;
+  color: ${({ theme }) => theme.color.grey[300]};
+  ${({ theme }) => theme.typo.body.medium};
+  padding: 0.75rem 2rem;
+  justify-content: center;
+  align-items: center;
   border: 0.0625rem solid ${({ theme }) => theme.color.grey[300]};
 `;
 
@@ -58,7 +73,5 @@ export const IsSelectButton = styled.button<{ isSelected: boolean }>`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  pointer-events: ${({ isSelected }) => {
-    if (isSelected) return 'none';
-  }};
+  pointer-events: ${({ isSelected }) => isSelected && 'none'};
 `;
