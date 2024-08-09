@@ -1,10 +1,5 @@
-export interface AddressDataType {
-  id: number,
-  tag: string,
-  zipcode: number,
-  address: string,
-  detail: string,
-  request: string,
-  phone: string,
-  user: number
+import { AddAddressFormType } from 'client/types';
+
+export interface AddressDataType extends AddAddressFormType {
+  id: number;
 }
