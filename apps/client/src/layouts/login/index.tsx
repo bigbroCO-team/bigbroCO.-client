@@ -55,14 +55,14 @@ const LoginLayout = () => {
               <FormInput
                 {...register('id')}
                 title='아이디'
-                placeHolder='아이디를 입력해주세요'
+                placeholder='아이디를 입력해주세요'
                 type={InputType.TEXT}
                 errorMessage={errors.id?.message}
               />
               <FormInput
                 {...register('password')}
                 title='비밀번호'
-                placeHolder='비밀번호를 입력해주세요'
+                placeholder='비밀번호를 입력해주세요'
                 type={InputType.PASSWORD}
                 errorMessage={errors.password?.message}
               />

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import * as S from './style';
 import { LeftArrow } from 'client/assets';
 import { DisabledInput, FormInput } from 'client/components/Input';
@@ -95,7 +96,7 @@ const AddAddressModal: React.FC<AddAddressModal> = ({ setIsModal, id }) => {
       setIsModify(true);
       getPrevAddress(id);
     }
-  }, []);
+  }, [getPrevAddress, id]);
 
   return (
     <>

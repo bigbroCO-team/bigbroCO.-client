@@ -3,7 +3,7 @@
 import { AddressDataType, getAddress, Header } from 'shared';
 import * as S from './style';
 import { SelectIcon } from 'client/assets';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { toLocaleString } from 'client/utils';
 import { toTelFormat } from 'shared/utils';
 import { useStore } from 'client/stores';
@@ -16,16 +16,16 @@ const PaymentLayout = () => {
   const handlePaymentProductListButtonCLick = () =>
     setIsAccordion((prev) => !prev);
 
-  const fetchingAddress = async () => {
+  const fetchingAddress = useCallback(async () => {
     if (selectedAddress) {
       const data = await getAddress(selectedAddress);
       setAddressData(data);
     }
-  };
+  }, [selectedAddress]);
 
   useEffect(() => {
     fetchingAddress();
-  }, [selectedAddress]);
+  }, [fetchingAddress, selectedAddress]);
 
   return (
     <S.Container>
