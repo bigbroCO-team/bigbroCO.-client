@@ -10,3 +10,7 @@ export const productUrl = {
   getProductDetailById: (id: number) => `/product/${id}`,
   getProductListByQuery: (query: BrandType) => `/product?category=${query}`,
 } as const;
+
+export const cartUrl = {
+  getCartInfo: () => '/cart',
+} as const;
