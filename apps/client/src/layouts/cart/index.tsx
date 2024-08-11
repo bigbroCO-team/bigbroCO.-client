@@ -5,6 +5,8 @@ import * as S from './style';
 import { Header } from 'shared';
 import { SelectShoppingCart, PaymentInfo } from 'client/components';
 
+import { useGetCartInfo } from 'shared/hooks';
+
 const MokProduct = [
   {
     productImg:
@@ -36,6 +38,10 @@ const MokProduct = [
 ];
 
 const CartLayout = () => {
+  const { data: data } = useGetCartInfo();
+
+  console.log(data);
+
   return (
     <>
       <Header type={'client_clear'} />
