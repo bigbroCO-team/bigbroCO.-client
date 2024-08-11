@@ -1,17 +1,23 @@
+import { forwardRef } from 'react';
 import * as S from './style';
 
-interface Props {
-  name: string;
-  value: string;
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  title: string;
+  errorMessage?: string | undefined;
 }
 
-const DisabledInput: React.FC<Props> = ({ name, value }) => {
-  return (
-    <S.Container>
-      <S.Name>{name}</S.Name>
-      <S.Input value={value} disabled />
-    </S.Container>
-  );
-};
+const DisabledInput = forwardRef<HTMLInputElement, Props>(
+  ({ title, errorMessage, ...attributes }, ref) => {
+    return (
+      <S.Container>
+        <S.Title>{title}</S.Title>
+        <S.Input disabled ref={ref} {...attributes} />
+        <S.Error>{errorMessage}</S.Error>
+      </S.Container>
+    );
+  }
+);
+
+DisabledInput.displayName = 'DisabledInput';
 
 export default DisabledInput;

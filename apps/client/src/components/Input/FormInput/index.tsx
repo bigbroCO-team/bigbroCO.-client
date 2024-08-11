@@ -8,12 +8,11 @@ import { CloseEyesIcon, OpenEyesIcon } from 'client/assets';
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   title: string;
   type: InputType;
-  errorMessage: string | undefined;
-  placeHolder: string;
+  errorMessage?: string | undefined;
 }
 
 const FormInput = forwardRef<HTMLInputElement, Props>(
-  ({ title, type, placeHolder, errorMessage, ...attributes }, ref) => {
+  ({ title, type, errorMessage, ...attributes }, ref) => {
     const [isHidden, setIsHidden] = useState<boolean>(true);
 
     const handleHiddenButtonClick = () => setIsHidden((prev) => !prev);
@@ -28,7 +27,6 @@ const FormInput = forwardRef<HTMLInputElement, Props>(
                 ? InputType.TEXT
                 : InputType.PASSWORD
             }
-            placeholder={placeHolder}
             isError={!!errorMessage}
             ref={ref}
             {...attributes}
