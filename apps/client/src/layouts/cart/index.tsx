@@ -40,8 +40,6 @@ const MokProduct = [
 const CartLayout = () => {
   const { data: data } = useGetCartInfo();
 
-  console.log(data);
-
   return (
     <>
       <Header type={'client_clear'} />
