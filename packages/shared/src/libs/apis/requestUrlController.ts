@@ -11,6 +11,15 @@ export const productUrl = {
   getProductListByQuery: (query: BrandType) => `/product?category=${query}`,
 } as const;
 
+export const addressUrl = {
+  getAddress: () => '/address',
+  getAddressById: (id: number) => `/address/${id}`,
+  postAddress: () => '/address',
+  putAddress: (id: number) => `/address/${id}`,
+  deleteAddress: (id: number) => `/address/${id}`,
+};
+
 export const cartUrl = {
   getCartInfo: () => '/cart',
+  postCart: () => '/cart',
 } as const;

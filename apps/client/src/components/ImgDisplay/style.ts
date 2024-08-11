@@ -26,6 +26,7 @@ export const SubImg = styled.img<{ isSelected: boolean }>`
       border: 0.125rem solid ${theme.color.main[50]};
     `};
   width: 5.625rem;
+  min-width: 5.625rem;
   height: 5.625rem;
   object-fit: contain;
   cursor: pointer;

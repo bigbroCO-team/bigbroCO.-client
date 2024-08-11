@@ -28,7 +28,7 @@ const GlobalStyle = () => (
       }
 
       body {
-        background: '#1A1918';
+        background-color: '#1A1918';
         height: 100vh;
         height: 100dvh;
         overscroll-behavior: none;

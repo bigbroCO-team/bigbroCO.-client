@@ -16,6 +16,7 @@ export const InfoWrapper = styled.div`
   align-items: flex-start;
   gap: 1.5rem;
   border: 0.0625rem solid ${({ theme }) => theme.color.grey[100]};
+  background-color: ${({ theme }) => theme.color.background}; //문제 시 삭제
 `;
 
 export const ProductContainer = styled.div`
@@ -51,7 +52,7 @@ export const AddOrderText = styled.p`
 export const BorderBar = styled.div`
   width: 100%;
   height: 0.0625rem;
-  background: ${({ theme }) => theme.color.grey[100]};
+  background-color: ${({ theme }) => theme.color.grey[100]};
 `;
 
 export const TotalPriceText = styled.p`
