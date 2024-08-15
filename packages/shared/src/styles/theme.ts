@@ -120,6 +120,7 @@ const typo = {
 
 const color = {
   main: { 50: '#FF952B', 100: '#2C46FF', 150: '#288BE1' },
+  yellow: '#FAE100',
   error: '#DF454A',
   grey: {
     25: '#252525',
