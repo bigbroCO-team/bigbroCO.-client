@@ -1,6 +1,11 @@
 'use client';
 
-import { Header, PostCartType, useGetProductDetail, usePostCart } from 'shared';
+import {
+  PCHeader,
+  PostCartType,
+  useGetProductDetail,
+  usePostCart,
+} from 'shared';
 import * as S from './style';
 import { BackIcon } from 'client/assets';
 import {
@@ -61,7 +66,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ id }) => {
 
   return (
     <S.Container>
-      <Header type='client_black' />
+      <PCHeader type='client_black' />
       <S.LeftContainer>
         <S.BackButton href={`/${data?.category}`}>
           <BackIcon /> 돌아가기

@@ -3,7 +3,7 @@
 import { BrandType } from 'shared/types';
 import * as S from './style';
 import { backgroundImg } from 'client/public';
-import { Header, useGetProductList } from 'shared';
+import { PCHeader, useGetProductList } from 'shared';
 import { ProductItem } from 'client/components';
 import { minutesToMs } from 'client/utils';
 
@@ -19,7 +19,7 @@ const PorductListLayout: React.FC<ProuctListLayoutProps> = ({ brand }) => {
 
   return (
     <S.Container>
-      <Header type='client_img' />
+      <PCHeader type='client_img' />
       <S.ShadowBox>
         <S.InnerContainer>
           <S.Title>{brand}</S.Title>
