@@ -29,22 +29,18 @@ const MobileHeader = () => {
 
   const brand = pathToText[path.split('/')[1]];
 
-  const handleMoreButtonClick = () => setIsSideBar(true);
-
-  const handleBackgroundClick = () => setIsSideBar(false);
-
   return (
     <>
       <S.Container>
         <S.LeftBox isLogo={isLogo}>{isLogo ? brand : ''}</S.LeftBox>
         <S.RightBox>
-          <S.MoreButton onClick={handleMoreButtonClick}>
+          <S.MoreButton onClick={() => setIsSideBar(true)}>
             <MoreIcon />
           </S.MoreButton>
         </S.RightBox>
       </S.Container>
       {isSideBar && (
-        <S.Background onClick={handleBackgroundClick}>
+        <S.Background onClick={() => setIsSideBar(false)}>
           <S.SideBar onClick={(e) => e.stopPropagation()}>
             <S.BrandBox>
               {brandArray.map((brand) => (
