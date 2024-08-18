@@ -20,5 +20,6 @@ export const addressUrl = {
 };
 
 export const cartUrl = {
+  getCartInfo: () => '/cart',
   postCart: () => '/cart',
 } as const;

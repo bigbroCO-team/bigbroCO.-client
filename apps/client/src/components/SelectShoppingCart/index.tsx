@@ -1,8 +1,8 @@
 import * as S from './style';
 import { CheckBox } from 'client/assets';
 import { useEffect, useState } from 'react';
-import { CheckProduct } from 'client/components';
-import { ShoppingModal } from 'client/components';
+import { ShoppingModal } from '../Modal';
+import CheckProduct from '../CheckProduct';
 
 interface Props {
   products: Product[];

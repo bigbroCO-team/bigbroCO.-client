@@ -23,7 +23,7 @@ export const QustionText = styled.p`
 `;
 
 export const ExplainText = styled.p`
-  ${({ theme }) => theme.typo.body.small};
+  ${({ theme }) => theme.typo.label};
   color: ${({ theme }) => theme.color.grey[600]};
 `;
 

@@ -18,5 +18,6 @@ export const productQueryKeys = {
 } as const;
 
 export const cartQueryKeys = {
+  getCartInfo: () => ['get', 'cart', 'info'],
   postCart: () => ['post', 'cart', 'add'],
 } as const;
