@@ -1,6 +1,6 @@
 'use client';
 
-import { AddressDataType, getAddress, Header } from 'shared';
+import { AddressDataType, getAddress, PCHeader } from 'shared';
 import * as S from './style';
 import { SelectIcon } from 'client/assets';
 import { useCallback, useEffect, useState } from 'react';
@@ -29,7 +29,7 @@ const PaymentLayout = () => {
 
   return (
     <S.Container>
-      <Header type='client_black' />
+      <PCHeader type='client_black' />
       <S.InnerContainer>
         <S.PaymentProductListContainer>
           <S.PaymentProductListHeader>

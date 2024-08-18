@@ -9,3 +9,4 @@ export * from './mainPageSVG';
 export * from './loginPageSVG';
 export { default as BackIcon } from './BackIcon';
 export { default as SelectIcon } from './SelectIcon';
+export { default as KakaoIcon } from './KakaoIcon';

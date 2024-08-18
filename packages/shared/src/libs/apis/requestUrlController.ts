@@ -1,7 +1,6 @@
 import { BrandType } from 'shared/types';
 
 export const authUrl = {
-  postLogin: () => '/auth/login',
   postVerify: () => '/auth/verify',
   postSignup: () => '/auth/signup',
 } as const;

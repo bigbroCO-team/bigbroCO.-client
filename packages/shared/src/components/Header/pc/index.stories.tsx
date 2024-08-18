@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Header from '.';
+import PCHeader from '.';
 
-const meta: Meta<typeof Header> = {
-  component: Header,
+const meta: Meta<typeof PCHeader> = {
+  component: PCHeader,
   args: { type: 'client_black' },
 };
 
