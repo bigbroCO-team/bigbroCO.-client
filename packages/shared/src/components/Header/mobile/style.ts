@@ -4,19 +4,24 @@ import { font } from 'shared/styles';
 
 export const Container = styled.header`
   width: 100%;
+  height: 3.8125rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0 1rem;
   position: absolute;
   top: 0;
   left: 0;
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const LeftBox = styled.div<{ isLogo: boolean }>`
   ${({ isLogo, theme }) =>
     isLogo ? theme.typo.imfeel.small : theme.typo.body.large};
   color: ${({ theme }) => theme.color.white};
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
 `;
 
 export const MoreButton = styled.button`
@@ -86,4 +91,9 @@ export const ControlButton = styled(Link)`
   gap: 0.5rem;
   height: 1.75rem;
   width: fit-content;
+`;
+
+export const BackButton = styled.button`
+  width: 1.5rem;
+  height: 1.5625rem;
 `;
