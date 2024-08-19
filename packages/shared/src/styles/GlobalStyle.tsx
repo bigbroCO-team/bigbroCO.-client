@@ -28,7 +28,7 @@ const GlobalStyle = () => (
       }
 
       body {
-        background: '#1A1918';
+        background-color: '#1A1918';
         height: 100vh;
         height: 100dvh;
         overscroll-behavior: none;
@@ -37,33 +37,6 @@ const GlobalStyle = () => (
       a {
         text-decoration: none;
         color: inherit;
-      }
-
-      html {
-        @media (max-width: 599px) {
-          font-size: 15px;
-        }
-        @media (max-width: 530px) {
-          font-size: 14px;
-        }
-        @media (max-width: 490px) {
-          font-size: 13px;
-        }
-        @media (max-width: 460px) {
-          font-size: 12px;
-        }
-        @media (max-width: 420px) {
-          font-size: 11px;
-        }
-        @media (max-width: 390px) {
-          font-size: 10px;
-        }
-        @media (max-width: 350px) {
-          font-size: 9px;
-        }
-        @media (max-width: 320px) {
-          font-size: 8px;
-        }
       }
 
       button {

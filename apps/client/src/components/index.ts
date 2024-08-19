@@ -8,5 +8,6 @@ export { default as ProductItem } from './ProductItem';
 export { default as SelectShoppingCart } from './SelectShoppingCart';
 export { default as ProductOption } from './ProductOption';
 export { default as ProductCount } from './ProductCount';
+export { default as KakaoLoginButton } from './KakaoLoginButton';
 export * from './Input';
 export * from './Modal';

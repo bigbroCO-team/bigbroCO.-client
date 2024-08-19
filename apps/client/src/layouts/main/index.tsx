@@ -3,7 +3,7 @@
 import * as S from './style';
 import * as Client from 'client/assets';
 import * as IMG from 'client/public';
-import { Header } from 'shared/components';
+import { PCHeader } from 'shared/components';
 import { BrandType } from 'shared/types';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -79,7 +79,7 @@ const MainLayout = () => {
       <S.TopContainer>
         <S.BackgroundImg src={IMG.backgroundImg} alt='배경 이미지' />
         <S.TopShadowContainer>
-          <Header
+          <PCHeader
             type={headerType}
             position={headerType === 'client_black' ? 'fixed' : 'absolute'}
           />

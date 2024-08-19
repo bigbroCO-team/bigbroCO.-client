@@ -1,25 +1,18 @@
 'use client';
 
 import * as S from './style';
-import type { HeaderType, HeaderPositionType, BrandType } from 'shared/types';
+import type { HeaderType, HeaderPositionType } from 'shared/types';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useGetVerify } from 'shared/hooks';
+import { brandArray } from 'shared/constants';
 
 interface Props {
   type: HeaderType;
   position?: HeaderPositionType;
 }
 
-const brandArray: BrandType[] = [
-  'CBWAS',
-  'S.C.B',
-  'BIGBRO',
-  'GONGNEWGI',
-  'SCULFEE',
-] as const;
-
-const Header: React.FC<Props> = ({ type, position = 'fixed' }) => {
+const PCHeader: React.FC<Props> = ({ type, position = 'fixed' }) => {
   const segment = usePathname();
   const { push } = useRouter();
   const { data } = useGetVerify();
@@ -75,4 +68,4 @@ const Header: React.FC<Props> = ({ type, position = 'fixed' }) => {
   );
 };
 
-export default Header;
+export default PCHeader;

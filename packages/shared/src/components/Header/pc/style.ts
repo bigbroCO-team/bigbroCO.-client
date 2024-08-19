@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { font } from 'shared/styles';
 import type { HeaderPositionType, HeaderType } from 'shared/types';
 
 export const Container = styled.header<{

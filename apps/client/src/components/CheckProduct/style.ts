@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background: ${({ theme }) => theme.color.background}; //문제 시 삭제
+  background-color: ${({ theme }) => theme.color.background}; //문제 시 삭제
 `;
 
 export const ProductInfoBox = styled.div`
