@@ -3,6 +3,7 @@ import * as S from './style';
 import { CartIcon, MoreIcon, PersonIcon } from 'shared/assets';
 import { useState } from 'react';
 import { brandArray } from 'shared/constants';
+import { LeftArrow } from 'client/assets';
 
 const pathToText: { [key: string]: string } = {
   '': 'BIGBRO',
@@ -12,6 +13,8 @@ const pathToText: { [key: string]: string } = {
   GONGNEWGI: 'GONGNEWGI',
   'S.C.B': 'S.C.B',
   SCULFEE: 'SCULFEE',
+  myPage: '마이페이지',
+  payment: '장바구니',
 };
 
 const MobileHeader = () => {
@@ -32,7 +35,16 @@ const MobileHeader = () => {
   return (
     <>
       <S.Container>
-        <S.LeftBox isLogo={isLogo}>{isLogo ? brand : ''}</S.LeftBox>
+        <S.LeftBox isLogo={isLogo}>
+          {isLogo ? (
+            brand
+          ) : (
+            <>
+              <LeftArrow />
+              {brand}
+            </>
+          )}
+        </S.LeftBox>
         <S.RightBox>
           <S.MoreButton onClick={() => setIsSideBar(true)}>
             <MoreIcon />

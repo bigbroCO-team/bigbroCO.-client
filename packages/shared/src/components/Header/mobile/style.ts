@@ -14,9 +14,12 @@ export const Container = styled.header`
 `;
 
 export const LeftBox = styled.div<{ isLogo: boolean }>`
+  display: flex;
   ${({ isLogo, theme }) =>
     isLogo ? theme.typo.imfeel.small : theme.typo.body.large};
   color: ${({ theme }) => theme.color.white};
+  gap: 12px;
+  align-items: center;
 `;
 
 export const MoreButton = styled.button`
