@@ -1,19 +1,8 @@
+import { DeliveryInfoType } from 'client/types';
 import * as S from './style';
 import { toLocaleString } from 'client/utils';
 
-interface Props {
-  isPreparing: boolean;
-  whenDelivery: string;
-  isArrive: boolean;
-  productImg: string;
-  productName: string;
-  productColorName: string;
-  productNumber: number;
-  productPrice: string;
-  beforeDiscountPrice: string;
-}
-
-const DeliveryInfo: React.FC<Props> = ({
+const DeliveryInfo: React.FC<DeliveryInfoType> = ({
   isPreparing,
   whenDelivery,
   isArrive,

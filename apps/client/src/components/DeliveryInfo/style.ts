@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { MobileWidth } from 'shared';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -45,12 +46,22 @@ export const ProductInfoBox = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${MobileWidth}px) {
+    flex-direction: column;
+    align-items: normal;
+  }
 `;
 
 export const ProductMainInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+
+  @media (max-width: ${MobileWidth}px) {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 `;
 
 export const ProductImg = styled.img`
@@ -80,6 +91,11 @@ export const ProductSecondaryInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 3.75rem;
+
+  @media (max-width: ${MobileWidth}px) {
+    justify-content: flex-end;
+    gap: 65px;
+  }
 `;
 
 export const ProductNumber = styled.p`
@@ -92,6 +108,11 @@ export const ProductPriceBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
+
+  @media (max-width: ${MobileWidth}px) {
+    flex-direction: row-reverse;
+    gap: 0.75rem;
+  }
 `;
 
 export const ProductPrice = styled.p`
@@ -110,6 +131,9 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   gap: 0.75rem;
+  @media (max-width: ${MobileWidth}px) {
+    gap: 14px;
+  }
 `;
 
 export const Button = styled.button`
@@ -124,4 +148,10 @@ export const Button = styled.button`
 
   border: 0.0625rem solid ${({ theme }) => theme.color.grey[300]};
   background-color: ${({ theme }) => theme.color.background};
+
+  @media (max-width: ${MobileWidth}px) {
+    width: 100px;
+    padding: 12px 26px;
+    font-size: 12px;
+  }
 `;
