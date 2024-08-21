@@ -1,3 +1,5 @@
+'use client';
+
 import { usePathname } from 'next/navigation';
 import * as S from './style';
 import { CartIcon, MoreIcon, PersonIcon } from 'shared/assets';
