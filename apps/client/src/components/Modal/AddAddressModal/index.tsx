@@ -2,10 +2,11 @@
 import * as S from './style';
 import { LeftArrow } from 'client/assets';
 import { DisabledInput, FormInput } from 'client/components/Input';
-import { AddAddressFormType, InputType } from 'client/types';
+import { InputType } from 'client/types';
+import { AddAddressFormType } from 'shared/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { AddAddressFormSchema } from 'client/schemas';
+import { AddAddressFormSchema } from 'shared/schemas';
 import { Address, useDaumPostcodePopup } from 'react-daum-postcode';
 import { useEffect, useState } from 'react';
 import { getAddress } from 'shared/apis';

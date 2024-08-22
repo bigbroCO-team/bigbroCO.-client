@@ -1,2 +1,2 @@
 export * from './Shopping';
-export * from './AddAddressModal';
+export { default as AddAddressModal } from './AddAddressModal';

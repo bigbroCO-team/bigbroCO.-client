@@ -5,8 +5,8 @@ import * as S from './style';
 import { LeftArrow } from 'client/assets';
 import { useGetAddress } from 'shared/hooks';
 import { useEffect, useState } from 'react';
-import AddAddressModal from 'client/components/Modal/AddAddressModal';
 import { useSearchParams } from 'next/navigation';
+import { AddAddressModal } from 'client/components';
 
 const AddressLayout = () => {
   const params = useSearchParams();
