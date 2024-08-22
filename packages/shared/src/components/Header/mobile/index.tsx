@@ -2,21 +2,16 @@
 
 import { usePathname } from 'next/navigation';
 import * as S from './style';
-import { CartIcon, MoreIcon, PersonIcon } from 'shared/assets';
+import { CartIcon, HeaderBackIcon, MoreIcon, PersonIcon } from 'shared/assets';
 import { useState } from 'react';
 import { brandArray } from 'shared/constants';
 
-const pathToText: { [key: string]: string } = {
-  '': 'BIGBRO',
-  login: 'BIGBRO',
-  BIGBRO: 'BIGBRO',
-  CBWAS: 'CBWAS',
-  GONGNEWGI: 'GONGNEWGI',
-  'S.C.B': 'S.C.B',
-  SCULFEE: 'SCULFEE',
-};
+interface MobileHeaderProps {
+  logo: string;
+  handleBackButtonClick?: () => void;
+}
 
-const MobileHeader = () => {
+const MobileHeader = ({ logo, handleBackButtonClick }: MobileHeaderProps) => {
   const [isSideBar, setIsSideBar] = useState<boolean>(false);
   const path = usePathname();
   const isLogo = [
@@ -29,12 +24,17 @@ const MobileHeader = () => {
     '/SCULFEE',
   ].includes(path);
 
-  const brand = pathToText[path.split('/')[1]];
-
   return (
     <>
       <S.Container>
-        <S.LeftBox isLogo={isLogo}>{isLogo ? brand : ''}</S.LeftBox>
+        <S.LeftBox isLogo={isLogo}>
+          {handleBackButtonClick && (
+            <S.BackButton onClick={handleBackButtonClick}>
+              <HeaderBackIcon />
+            </S.BackButton>
+          )}
+          {logo}
+        </S.LeftBox>
         <S.RightBox>
           <S.MoreButton onClick={() => setIsSideBar(true)}>
             <MoreIcon />

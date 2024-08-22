@@ -5,7 +5,7 @@ import { LoginMobileLayout } from 'client/mobileLayout';
 import { LoginPCLayout } from 'client/pcLayout';
 
 const LoginLayout = () => {
-  return useGetLayoutByWidth(LoginPCLayout, LoginMobileLayout);
+  return useGetLayoutByWidth(<LoginPCLayout />, <LoginMobileLayout />);
 };
 
 export default LoginLayout;
