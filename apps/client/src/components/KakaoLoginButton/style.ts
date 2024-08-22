@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
-export const Container = styled(Link)`
+export const Container = styled.a`
   ${({ theme }) => theme.typo.body.large};
   color: ${({ theme }) => theme.color.black};
   background-color: ${({ theme }) => theme.color.yellow};

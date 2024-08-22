@@ -6,7 +6,7 @@ import { MobileHeader } from 'shared';
 
 const LoginMobileLayout = () => (
   <S.Container>
-    <MobileHeader />
+    <MobileHeader logo='BIGBRO' />
     <S.SVGBundleContainer>
       <S.SVGBundleLeftBox>
         <S.LeftImg src={IMG.Login1Img} alt='로그인 이미지 1' priority={true} />
