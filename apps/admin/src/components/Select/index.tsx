@@ -5,7 +5,7 @@ import * as S from './style';
 import { ArrowIcon } from 'admin/assets';
 
 interface Props extends React.InputHTMLAttributes<HTMLSelectElement> {
-  options: any[];
+  options: string[];
 }
 
 const Select = forwardRef<HTMLSelectElement, Props>(
