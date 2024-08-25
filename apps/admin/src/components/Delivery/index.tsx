@@ -4,6 +4,7 @@ import { useState } from 'react';
 import * as S from './style';
 import { CheckIcon, DetailArrow } from 'admin/assets';
 import { CustomInput, Select } from 'admin/components';
+import { toTelFormat } from 'shared/utils';
 
 interface Props {
   year: string;
@@ -12,7 +13,7 @@ interface Props {
   price: number;
   name: string;
   address: string;
-  phoneNumber: number;
+  phoneNumber: string;
   id: string;
 }
 
@@ -38,14 +39,6 @@ const Delivery: React.FC<Props> = ({
     '환불시작',
   ];
 
-  const formatPhoneNumber = (number: number): string => {
-    const numberStr = number.toString();
-    if (numberStr.length === 8) {
-      return `${numberStr.slice(0, 4)}-${numberStr.slice(4)}`;
-    }
-    return numberStr;
-  };
-
   return (
     <S.Wrapper>
       <S.CheckBox onClick={() => setIsChecked(!isChecked)}>
@@ -68,7 +61,7 @@ const Delivery: React.FC<Props> = ({
           <S.Text key={index}>{line}</S.Text>
         ))}
       </S.TextBox>
-      <S.Text>010-{formatPhoneNumber(phoneNumber)}</S.Text>
+      <S.Text>010-{toTelFormat(phoneNumber)}</S.Text>
       <S.Text>{id}</S.Text>
 
       <Select options={[...deliveryCompany]} defaultValue='배송사 선택' />

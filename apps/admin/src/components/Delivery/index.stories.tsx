@@ -13,7 +13,7 @@ const meta: Meta<typeof Delivery> = {
     price: 30000,
     name: '홍길동',
     address: '',
-    phoneNumber: 12345678,
+    phoneNumber: '01012345678',
     id: 'abcd1234',
   },
 };
