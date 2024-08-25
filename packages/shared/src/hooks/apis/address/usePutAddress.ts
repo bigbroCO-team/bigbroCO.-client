@@ -1,7 +1,7 @@
 import { useMutation, UseMutationOptions } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { addressQueryKeys, addressUrl, put } from 'shared/libs';
-import { AddAddressFormType } from 'client/types';
+import { AddAddressFormType } from 'shared/types';
 
 interface MutateFunctionArgsType {
   id: number;

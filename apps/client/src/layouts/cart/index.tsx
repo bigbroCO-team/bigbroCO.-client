@@ -2,7 +2,7 @@
 
 import * as S from './style';
 
-import { Header } from 'shared';
+import { PCHeader } from 'shared';
 import { SelectShoppingCart, PaymentInfo } from 'client/components';
 
 import { useGetCartInfo } from 'shared/hooks';
@@ -24,7 +24,7 @@ const CartLayout = () => {
 
   return (
     <>
-      <Header type={'client_clear'} />
+      <PCHeader type={'client_clear'} />
       <S.Wrapper>
         <S.Container>
           <S.LeftBox>
