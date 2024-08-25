@@ -30,7 +30,7 @@ const Delivery: React.FC<Props> = ({
 
   const deliveryCompany = ['로젠택배'];
 
-  const moneyState = [
+  const orderState = [
     '입금확인전',
     '입금확인',
     '배송준비중',
@@ -73,7 +73,7 @@ const Delivery: React.FC<Props> = ({
 
       <Select options={[...deliveryCompany]} defaultValue='배송사 선택' />
       <CustomInput placeholder='운송장번호를입력해주세요' />
-      <Select options={[...moneyState]} />
+      <Select options={[...orderState]} />
 
       <S.DetailBox>
         <S.Text>보기</S.Text>
