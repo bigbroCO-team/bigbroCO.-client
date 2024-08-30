@@ -1,4 +1,4 @@
-import { Provider } from 'shared/components';
+import Provider from './provider';
 
 const RootLayout = ({
   children,

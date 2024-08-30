@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div></div>;
-}
+import { MainLayout } from 'admin/layouts';
+
+const Page = () => <MainLayout />;
+
+export default Page;
