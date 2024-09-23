@@ -3,6 +3,8 @@
 import { CheckBox, MinusIcon, PlusIcon, XIcon } from 'client/assets';
 import * as S from './style';
 import { useEffect, useState } from 'react';
+import { useStore } from 'client/stores';
+import { MobileWidth } from 'shared/constants';
 
 interface Props {
   productImg: string;
@@ -29,6 +31,12 @@ const CheckProduct: React.FC<Props> = ({
 }) => {
   const [priceCount, setPriceCount] = useState<number>(1);
   const [isClicked, setIsClicked] = useState<boolean>(false);
+  const { width } = useStore();
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMobile(width <= MobileWidth);
+  }, [width]);
 
   useEffect(() => {
     setIsClicked(allClick);
@@ -54,7 +62,7 @@ const CheckProduct: React.FC<Props> = ({
     : productPrice.toLocaleString();
 
   return (
-    <S.Wrapper>
+    <S.Wrapper isMobile={isMobile}>
       <S.ProductInfoBox>
         <S.CheckBoxContainer onClick={handleCheckboxClick}>
           <CheckBox isClicked={isClicked} />
@@ -69,7 +77,7 @@ const CheckProduct: React.FC<Props> = ({
         </S.ProductMainInfo>
       </S.ProductInfoBox>
 
-      <S.PriceInfoBox>
+      <S.PriceInfoBox isMobile={isMobile}>
         <S.PriceCount>
           <S.CountBtn onClick={() => cntCalculator(false)}>
             <MinusIcon />
@@ -83,7 +91,7 @@ const CheckProduct: React.FC<Props> = ({
         </S.PriceCount>
 
         <S.DetailPriceInfo>
-          <S.PriceTextBox>
+          <S.PriceTextBox isMobile={isMobile}>
             {isSale ? (
               <>
                 <S.PriceText>{salePrice}원</S.PriceText>
@@ -93,7 +101,7 @@ const CheckProduct: React.FC<Props> = ({
               <S.PriceText>{productPrice.toLocaleString()}원</S.PriceText>
             )}
           </S.PriceTextBox>
-          <S.XButton onClick={onDelete}>
+          <S.XButton onClick={onDelete} isMobile={isMobile}>
             <XIcon />
           </S.XButton>
         </S.DetailPriceInfo>

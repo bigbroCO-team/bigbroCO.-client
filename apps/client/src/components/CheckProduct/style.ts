@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
-  display: flex;
+export const Wrapper = styled.div<{ isMobile: boolean }>`
+  display: ${({ isMobile }) => (isMobile ? 'inline-block' : 'flex')};
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -51,10 +51,13 @@ export const ProductColor = styled.p`
   color: ${({ theme }) => theme.color.grey[500]};
 `;
 
-export const PriceInfoBox = styled.div`
+export const PriceInfoBox = styled.div<{ isMobile: boolean }>`
   display: flex;
   align-items: center;
-  gap: 3.75rem;
+  width: ${({ isMobile }) => (isMobile ? '100%' : 'none')};
+  padding-left: ${({ isMobile }) => (isMobile ? '2rem' : '0')};
+  justify-content: ${({ isMobile }) => (isMobile ? 'space-between' : 'none')};
+  gap: 60px;
 `;
 
 export const PriceCount = styled.div`
@@ -90,17 +93,17 @@ export const DetailPriceInfo = styled.div`
   gap: 1.5rem;
 `;
 
-export const XButton = styled.button`
-  display: flex;
+export const XButton = styled.button<{ isMobile: boolean }>`
+  display: ${({ isMobile }) => (isMobile ? 'none' : 'flex')};
   width: 1.5rem;
   height: 1.5rem;
   justify-content: center;
   align-items: center;
 `;
 
-export const PriceTextBox = styled.div`
+export const PriceTextBox = styled.div<{ isMobile: boolean }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ isMobile }) => (isMobile ? 'row-reverse' : 'column')};
   align-items: flex-start;
   gap: 0.75rem;
 `;
