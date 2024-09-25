@@ -26,7 +26,7 @@ const CartMobileLayout = () => {
     <>
       <MobileHeader logo={'장바구니'} />
       <S.Wrapper>
-        <S.Container>
+        <S.Container length={MokProduct.length}>
           <S.TopBox>
             <SelectShoppingCart products={MokProduct} />
           </S.TopBox>

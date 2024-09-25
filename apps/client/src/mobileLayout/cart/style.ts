@@ -9,11 +9,11 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ length: number }>`
   width: 90vw;
-  height: 100%;
+  height: ${({ length }) => (length === 0 ? '100vh' : '100%')};
   display: flex;
-  margin-top: 4.6875rem;
+  margin: 4.0625rem 0;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
